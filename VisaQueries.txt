@@ -1024,3 +1024,893 @@ BEGIN
 END;
 GO
 ```
+
+
+
+
+INSERT INTO Recon_POC.dbo.tbl_pages
+(ipage, page_name, controller, action_name, parent_id, is_active, systemdatetime, icon)
+VALUES(1, N'Dashboard', NULL, NULL, 0, 1, '2025-08-20 14:18:53.827', N'fa fa-dashboard');
+INSERT INTO Recon_POC.dbo.tbl_pages
+(ipage, page_name, controller, action_name, parent_id, is_active, systemdatetime, icon)
+VALUES(2, N'Voucher Analytics', N'Analytics', N'VoucherAnalytics', 1, 0, '2025-08-20 14:18:53.850', N'fa fa-dashboard');
+INSERT INTO Recon_POC.dbo.tbl_pages
+(ipage, page_name, controller, action_name, parent_id, is_active, systemdatetime, icon)
+VALUES(9, N'Masters', NULL, NULL, 0, 1, '2021-03-24 14:29:56.000', N'fa fa-database');
+INSERT INTO Recon_POC.dbo.tbl_pages
+(ipage, page_name, controller, action_name, parent_id, is_active, systemdatetime, icon)
+VALUES(10, N'Bank Master', N'Masters', N'BankMaster', 9, 1, '2021-03-24 14:30:32.000', N'fa fa-dashboard');
+INSERT INTO Recon_POC.dbo.tbl_pages
+(ipage, page_name, controller, action_name, parent_id, is_active, systemdatetime, icon)
+VALUES(11, N'File Master', N'Masters', N'FileMaster', 9, 1, '2021-03-24 14:31:47.000', N'fa fa-dashboard');
+INSERT INTO Recon_POC.dbo.tbl_pages
+(ipage, page_name, controller, action_name, parent_id, is_active, systemdatetime, icon)
+VALUES(12, N'Network Master', N'Masters', N'NetworkMaster', 9, 1, '2021-03-24 14:32:35.000', N'fa fa-dashboard');
+INSERT INTO Recon_POC.dbo.tbl_pages
+(ipage, page_name, controller, action_name, parent_id, is_active, systemdatetime, icon)
+VALUES(16, N'Bank Reports', NULL, NULL, 0, 1, '2021-03-24 14:34:30.000', N'fa fa-dashboard');
+INSERT INTO Recon_POC.dbo.tbl_pages
+(ipage, page_name, controller, action_name, parent_id, is_active, systemdatetime, icon)
+VALUES(25, N'Summary Reports', NULL, NULL, 16, 1, '2021-03-24 14:39:09.000', N'fa fa-dashboard');
+INSERT INTO Recon_POC.dbo.tbl_pages
+(ipage, page_name, controller, action_name, parent_id, is_active, systemdatetime, icon)
+VALUES(31, N'Recon Process', NULL, NULL, 0, 1, '2021-03-24 14:55:12.000', N'fa fa-exchange');
+INSERT INTO Recon_POC.dbo.tbl_pages
+(ipage, page_name, controller, action_name, parent_id, is_active, systemdatetime, icon)
+VALUES(32, N'ATM', NULL, NULL, 31, 1, '2021-03-24 14:56:01.000', N'fa fa-dashboard');
+INSERT INTO Recon_POC.dbo.tbl_pages
+(ipage, page_name, controller, action_name, parent_id, is_active, systemdatetime, icon)
+VALUES(75, N'User Management [Admin]', NULL, NULL, 0, 1, '2021-03-24 15:17:18.000', N'fa fa-user');
+INSERT INTO Recon_POC.dbo.tbl_pages
+(ipage, page_name, controller, action_name, parent_id, is_active, systemdatetime, icon)
+VALUES(77, N'Add Edit User', N'CreateUser', N'EditUserDetails', 75, 1, '2021-03-24 15:19:42.000', N'fa fa-dashboard');
+INSERT INTO Recon_POC.dbo.tbl_pages
+(ipage, page_name, controller, action_name, parent_id, is_active, systemdatetime, icon)
+VALUES(93, N'Recon Process', N'ReconProcess', N'ReconProcess', 9, 1, '2021-03-24 14:34:16.000', N'fa fa-dashboard');
+INSERT INTO Recon_POC.dbo.tbl_pages
+(ipage, page_name, controller, action_name, parent_id, is_active, systemdatetime, icon)
+VALUES(94, N'Report Master', N'Masters', N'ReportMaster', 9, 1, '2021-03-24 14:31:47.000', N'fa fa-dashboard');
+INSERT INTO Recon_POC.dbo.tbl_pages
+(ipage, page_name, controller, action_name, parent_id, is_active, systemdatetime, icon)
+VALUES(95, N'Recon Group', N'Masters', N'ReconGroup', 9, 1, '2021-03-24 14:31:47.000', N'fa fa-dashboard');
+INSERT INTO Recon_POC.dbo.tbl_pages
+(ipage, page_name, controller, action_name, parent_id, is_active, systemdatetime, icon)
+VALUES(98, N'Other', NULL, NULL, 31, 1, '2021-03-24 15:13:30.000', N'fa fa-dashboard');
+INSERT INTO Recon_POC.dbo.tbl_pages
+(ipage, page_name, controller, action_name, parent_id, is_active, systemdatetime, icon)
+VALUES(102, N'Bulk Report Generator', N'VoucherDetails', N'report_GroupMaster', 98, 1, '2021-03-24 14:42:54.000', N'fa fa-dashboard');
+INSERT INTO Recon_POC.dbo.tbl_pages
+(ipage, page_name, controller, action_name, parent_id, is_active, systemdatetime, icon)
+VALUES(103, N'Recon Process', N'ReconProcess', N'ReconProcess', 9, 1, '2021-03-24 14:30:32.000', N'fa fa-dashboard');
+INSERT INTO Recon_POC.dbo.tbl_pages
+(ipage, page_name, controller, action_name, parent_id, is_active, systemdatetime, icon)
+VALUES(104, N'Report Master', N'Masters', N'ReportMaster', 9, 1, '2021-03-24 14:30:32.000', N'fa fa-dashboard');
+INSERT INTO Recon_POC.dbo.tbl_pages
+(ipage, page_name, controller, action_name, parent_id, is_active, systemdatetime, icon)
+VALUES(105, N'Recon Group', N'Masters', N'ReconGroup', 9, 1, '2021-03-24 14:30:32.000', N'fa fa-dashboard');
+INSERT INTO Recon_POC.dbo.tbl_pages
+(ipage, page_name, controller, action_name, parent_id, is_active, systemdatetime, icon)
+VALUES(106, N'Report Generator', N'Masters', N'ReportGenerator', 9, 1, '2021-03-24 14:30:32.000', N'fa fa-dashboard');
+INSERT INTO Recon_POC.dbo.tbl_pages
+(ipage, page_name, controller, action_name, parent_id, is_active, systemdatetime, icon)
+VALUES(107, N'BO Reports', N'BOComplaints', N'BOReportStatus', 84, 1, '2021-04-03 15:32:10.000', N'fa fa-dashboard');
+INSERT INTO Recon_POC.dbo.tbl_pages
+(ipage, page_name, controller, action_name, parent_id, is_active, systemdatetime, icon)
+VALUES(108, N'ATM Detail search', N'DetailSearch', N'DetailsSearch', 32, 1, '2021-03-24 14:56:36.000', N'fa fa-dashboard');
+INSERT INTO Recon_POC.dbo.tbl_pages
+(ipage, page_name, controller, action_name, parent_id, is_active, systemdatetime, icon)
+VALUES(109, N'UPI Detail Search', N'DetailSearch', N'DetailsSearch', 44, 1, '2021-03-24 14:56:36.000', N'fa fa-dashboard');
+INSERT INTO Recon_POC.dbo.tbl_pages
+(ipage, page_name, controller, action_name, parent_id, is_active, systemdatetime, icon)
+VALUES(110, N'IMPS Detail Search', N'DetailSearch', N'DetailsSearch', 53, 1, '2021-03-24 14:56:36.000', N'fa fa-dashboard');
+INSERT INTO Recon_POC.dbo.tbl_pages
+(ipage, page_name, controller, action_name, parent_id, is_active, systemdatetime, icon)
+VALUES(111, N'AEPS Detail Search', N'DetailSearch', N'DetailsSearch', 60, 1, '2021-03-24 14:56:36.000', N'fa fa-dashboard');
+INSERT INTO Recon_POC.dbo.tbl_pages
+(ipage, page_name, controller, action_name, parent_id, is_active, systemdatetime, icon)
+VALUES(112, N'Dispute Search', NULL, NULL, 31, 1, '2022-03-03 16:42:32.280', N'fa fa-dashboard');
+INSERT INTO Recon_POC.dbo.tbl_pages
+(ipage, page_name, controller, action_name, parent_id, is_active, systemdatetime, icon)
+VALUES(113, N'NFS Detail Search', N'DetailSearch', N'DetailsSearch', 32, 1, '2022-05-09 13:43:16.343', N'fa fa-dashboard');
+INSERT INTO Recon_POC.dbo.tbl_pages
+(ipage, page_name, controller, action_name, parent_id, is_active, systemdatetime, icon)
+VALUES(114, N'VISA Detail Search', N'DetailSearch', N'DetailsSearch', 32, 1, '2022-05-09 14:03:22.423', N'fa fa-dashboard');
+INSERT INTO Recon_POC.dbo.tbl_pages
+(ipage, page_name, controller, action_name, parent_id, is_active, systemdatetime, icon)
+VALUES(115, N'RUPAY Detail Search', N'DetailSearch', N'DetailsSearch', 32, 1, '2023-03-20 18:02:43.730', N'fa fa-dashboard');
+INSERT INTO Recon_POC.dbo.tbl_pages
+(ipage, page_name, controller, action_name, parent_id, is_active, systemdatetime, icon)
+VALUES(116, N'Force Recon', N'TransactionSearch', N'ForceRecon', 32, 1, '2023-07-28 16:42:30.237', N'fa fa-dashboard');
+INSERT INTO Recon_POC.dbo.tbl_pages
+(ipage, page_name, controller, action_name, parent_id, is_active, systemdatetime, icon)
+VALUES(117, N'FileSecurity', N'DetailSearch', N'FileSecurity', 31, 1, '2024-10-18 15:41:10.107', N'fa fa-dashboard');
+INSERT INTO Recon_POC.dbo.tbl_pages
+(ipage, page_name, controller, action_name, parent_id, is_active, systemdatetime, icon)
+VALUES(118, N'Upload Raw files New', N'Upload', N'upload', 32, 1, '2025-05-25 12:21:06.003', N'fa fa-dashboard');
+INSERT INTO Recon_POC.dbo.tbl_pages
+(ipage, page_name, controller, action_name, parent_id, is_active, systemdatetime, icon)
+VALUES(119, N'NTSL VS Switch Summary', N'SummaryReports', N'NTSLSwitchSummary', 25, 1, '2025-09-29 19:20:17.823', N'fa fa-dashboard');
+INSERT INTO Recon_POC.dbo.tbl_pages
+(ipage, page_name, controller, action_name, parent_id, is_active, systemdatetime, icon)
+VALUES(120, N'Switch MIS Report', N'SummaryReports', N'SwitchMISReort', 25, 1, '2025-09-30 01:49:12.743', N'fa fa-dashboard');
+INSERT INTO Recon_POC.dbo.tbl_pages
+(ipage, page_name, controller, action_name, parent_id, is_active, systemdatetime, icon)
+VALUES(121, N'Monthly Transactions Report', N'SummaryReports', N'MonthlyTransactionsReport', 25, 1, '2025-09-30 01:49:12.743', N'fa fa-dashboard');
+INSERT INTO Recon_POC.dbo.tbl_pages
+(ipage, page_name, controller, action_name, parent_id, is_active, systemdatetime, icon)
+VALUES(122, N'Exception Reports', NULL, NULL, 16, 1, '2025-10-01 11:34:00.363', N'fa fa-dashboard');
+INSERT INTO Recon_POC.dbo.tbl_pages
+(ipage, page_name, controller, action_name, parent_id, is_active, systemdatetime, icon)
+VALUES(123, N'Switch Partial Reversal Report', N'ExceptionReports', N'SwitchPartialReversalReport', 122, 1, '2025-10-01 14:29:38.947', N'fa fa-dashboard');
+INSERT INTO Recon_POC.dbo.tbl_pages
+(ipage, page_name, controller, action_name, parent_id, is_active, systemdatetime, icon)
+VALUES(124, N'Switch Dump and Admin Mismatch Report', N'ExceptionReports', N'SwitchDumpNAdminMismatchReport', 122, 1, '2025-10-01 15:38:34.970', N'fa fa-dashboard');
+INSERT INTO Recon_POC.dbo.tbl_pages
+(ipage, page_name, controller, action_name, parent_id, is_active, systemdatetime, icon)
+VALUES(125, N'Dispute Management', NULL, NULL, 16, 1, '2025-10-01 16:18:46.163', N'fa fa-dashboard');
+INSERT INTO Recon_POC.dbo.tbl_pages
+(ipage, page_name, controller, action_name, parent_id, is_active, systemdatetime, icon)
+VALUES(126, N'RAW Adjustment Report', N'DisputeManagement', N'RAWAdjReport', 125, 1, '2025-10-01 16:20:52.520', N'fa fa-dashboard');
+INSERT INTO Recon_POC.dbo.tbl_pages
+(ipage, page_name, controller, action_name, parent_id, is_active, systemdatetime, icon)
+VALUES(127, N'Daily Reports', NULL, NULL, 16, 1, '2025-10-02 01:24:18.353', N'fa fa-dashboard');
+INSERT INTO Recon_POC.dbo.tbl_pages
+(ipage, page_name, controller, action_name, parent_id, is_active, systemdatetime, icon)
+VALUES(128, N'Undock Rectify Report', N'DailyReports', N'UndockRectifyReport', 127, 1, '2025-10-02 02:02:22.453', N'fa fa-dashboard');
+INSERT INTO Recon_POC.dbo.tbl_pages
+(ipage, page_name, controller, action_name, parent_id, is_active, systemdatetime, icon)
+VALUES(129, N'Undock Status Report', N'DailyReports', N'UndockStatusReport', 127, 1, '2025-10-02 02:18:38.050', N'fa fa-dashboard');
+INSERT INTO Recon_POC.dbo.tbl_pages
+(ipage, page_name, controller, action_name, parent_id, is_active, systemdatetime, icon)
+VALUES(130, N'Transaction Status Report', N'DailyReports', N'TransactionStatusReport', 127, 1, '2025-10-03 12:49:20.307', N'fa fa-dashboard');
+INSERT INTO Recon_POC.dbo.tbl_pages
+(ipage, page_name, controller, action_name, parent_id, is_active, systemdatetime, icon)
+VALUES(131, N'RAW Summary Report', N'SummaryReports', N'RawSummaryReport', 25, 1, '2025-10-03 16:12:49.250', N'fa fa-dashboard');
+INSERT INTO Recon_POC.dbo.tbl_pages
+(ipage, page_name, controller, action_name, parent_id, is_active, systemdatetime, icon)
+VALUES(132, N'Admin Data Report', N'SummaryReports', N'AdminDataReort', 25, 1, '2025-10-03 18:19:04.153', N'fa fa-dashboard');
+INSERT INTO Recon_POC.dbo.tbl_pages
+(ipage, page_name, controller, action_name, parent_id, is_active, systemdatetime, icon)
+VALUES(133, N'NTSL Bulk Report', N'SummaryReports', N'NTSLBulkReport', 25, 1, '2025-10-03 19:03:02.167', N'fa fa-dashboard');
+INSERT INTO Recon_POC.dbo.tbl_pages
+(ipage, page_name, controller, action_name, parent_id, is_active, systemdatetime, icon)
+VALUES(134, N'TTUM Report', NULL, NULL, 16, 1, '2021-03-24 14:35:32.000', N'fa fa-dashboard');
+INSERT INTO Recon_POC.dbo.tbl_pages
+(ipage, page_name, controller, action_name, parent_id, is_active, systemdatetime, icon)
+VALUES(135, N'Credit Adjustment Report', N'TTUMReport', N'CreditAdjustmentReport', 134, 1, '2025-10-03 16:12:49.250', N'fa fa-dashboard');
+INSERT INTO Recon_POC.dbo.tbl_pages
+(ipage, page_name, controller, action_name, parent_id, is_active, systemdatetime, icon)
+VALUES(136, N'NPCI Late Reversal Report', N'DailyReports', N'NPCILateReversalReport', 127, 1, '2025-10-03 12:49:20.307', N'fa fa-dashboard');
+INSERT INTO Recon_POC.dbo.tbl_pages
+(ipage, page_name, controller, action_name, parent_id, is_active, systemdatetime, icon)
+VALUES(137, N'Upload Raw files (Checker)', N'Upload', N'uploadchecker', 32, 1, '2021-04-03 15:32:10.000', N'fa fa-dashboard');
+INSERT INTO Recon_POC.dbo.tbl_pages
+(ipage, page_name, controller, action_name, parent_id, is_active, systemdatetime, icon)
+VALUES(138, N'Debit Adjustment Data', N'DisputeManagement', N'DebitAdjustmentData', 125, 1, '2025-11-13 11:43:49.997', N'fa fa-dashboard');
+INSERT INTO Recon_POC.dbo.tbl_pages
+(ipage, page_name, controller, action_name, parent_id, is_active, systemdatetime, icon)
+VALUES(139, N'Pre Arbitration Report', N'DisputeManagement', N'PreArbReport', 125, 1, '2025-11-13 16:10:55.147', N'fa fa-dashboard');
+INSERT INTO Recon_POC.dbo.tbl_pages
+(ipage, page_name, controller, action_name, parent_id, is_active, systemdatetime, icon)
+VALUES(140, N'CBR Reports', NULL, NULL, 16, 1, '2025-11-15 16:42:56.067', N'fa fa-dashboard');
+INSERT INTO Recon_POC.dbo.tbl_pages
+(ipage, page_name, controller, action_name, parent_id, is_active, systemdatetime, icon)
+VALUES(141, N'CBR Report', N'CBRReports', N'CBRReport', 140, 1, '2025-11-15 16:47:52.490', N'fa fa-dashboard');
+INSERT INTO Recon_POC.dbo.tbl_pages
+(ipage, page_name, controller, action_name, parent_id, is_active, systemdatetime, icon)
+VALUES(142, N'Admin Vs CBR Mismatch Report', N'CBRReports', N'AdminVSCBRMissmatch', 140, 1, '2025-11-15 18:28:02.040', N'fa fa-dashboard');
+INSERT INTO Recon_POC.dbo.tbl_pages
+(ipage, page_name, controller, action_name, parent_id, is_active, systemdatetime, icon)
+VALUES(143, N'Onus Co-Branded ATM', N'ExceptionReports', N'OnUnCoBrandedATM', 122, 1, '2025-11-15 19:38:42.533', N'fa fa-dashboard');
+INSERT INTO Recon_POC.dbo.tbl_pages
+(ipage, page_name, controller, action_name, parent_id, is_active, systemdatetime, icon)
+VALUES(144, N'ATM ID Wise EJ LOGS', N'ExceptionReports', N'ATMIDWiseEJLogs', 122, 1, '2025-11-15 21:42:16.520', N'fa fa-dashboard');
+INSERT INTO Recon_POC.dbo.tbl_pages
+(ipage, page_name, controller, action_name, parent_id, is_active, systemdatetime, icon)
+VALUES(145, N'FR Ageing Report', N'ExceptionReports', N'FR_AgingReport', 122, 1, '2025-11-16 17:56:28.460', N'fa fa-dashboard');
+INSERT INTO Recon_POC.dbo.tbl_pages
+(ipage, page_name, controller, action_name, parent_id, is_active, systemdatetime, icon)
+VALUES(146, N'RAW EJ File Report', N'ExceptionReports', N'RAWEjFileReport', 122, 1, '2025-11-17 12:32:40.270', N'fa fa-dashboard');
+INSERT INTO Recon_POC.dbo.tbl_pages
+(ipage, page_name, controller, action_name, parent_id, is_active, systemdatetime, icon)
+VALUES(147, N'EOD Date Report', N'ExceptionReports', N'EODDateReport', 122, 1, '2025-11-17 12:32:40.303', N'fa fa-dashboard');
+INSERT INTO Recon_POC.dbo.tbl_pages
+(ipage, page_name, controller, action_name, parent_id, is_active, systemdatetime, icon)
+VALUES(148, N'EJ ChargeBack Report', N'DisputeManagement', N'EJChargeBackReport', 125, 1, '2025-11-17 15:40:08.940', N'fa fa-dashboard');
+INSERT INTO Recon_POC.dbo.tbl_pages
+(ipage, page_name, controller, action_name, parent_id, is_active, systemdatetime, icon)
+VALUES(149, N'Search', NULL, NULL, 16, 1, '2025-11-17 19:36:33.990', N'fa fa-dashboard');
+INSERT INTO Recon_POC.dbo.tbl_pages
+(ipage, page_name, controller, action_name, parent_id, is_active, systemdatetime, icon)
+VALUES(150, N'Search by card Number', N'Search', N'SearchByCardNumber', 149, 1, '2025-11-17 19:38:53.463', N'fa fa-dashboard');
+INSERT INTO Recon_POC.dbo.tbl_pages
+(ipage, page_name, controller, action_name, parent_id, is_active, systemdatetime, icon)
+VALUES(152, N'ATMID Wise Switch MIS Report', N'SummaryReports', N'ATMIDWiseSwitchMISReport', 25, 1, '2025-11-17 21:00:39.643', N'fa fa-dashboard');
+INSERT INTO Recon_POC.dbo.tbl_pages
+(ipage, page_name, controller, action_name, parent_id, is_active, systemdatetime, icon)
+VALUES(153, N'Error Transaction Report', N'DailyReports', N'ErrorTansactionReport', 127, 1, '2025-11-17 21:41:19.117', N'fa fa-dashboard');
+INSERT INTO Recon_POC.dbo.tbl_pages
+(ipage, page_name, controller, action_name, parent_id, is_active, systemdatetime, icon)
+VALUES(154, N'Recon Check', N'SummaryReports', N'CheckRecon', 25, 1, '2025-11-17 22:23:22.753', N'fa fa-dashboard');
+INSERT INTO Recon_POC.dbo.tbl_pages
+(ipage, page_name, controller, action_name, parent_id, is_active, systemdatetime, icon)
+VALUES(155, N'Short Settlement Report', N'DailyReports', N'ShortSettlementReport', 127, 1, '2025-11-18 16:26:49.450', N'fa fa-dashboard');
+INSERT INTO Recon_POC.dbo.tbl_pages
+(ipage, page_name, controller, action_name, parent_id, is_active, systemdatetime, icon)
+VALUES(156, N'Suspect Fraud Report', N'DailyReports', N'SuspectFraudReport', 127, 1, '2025-11-19 13:19:25.400', N'fa fa-dashboard');
+INSERT INTO Recon_POC.dbo.tbl_pages
+(ipage, page_name, controller, action_name, parent_id, is_active, systemdatetime, icon)
+VALUES(157, N'Configuration', NULL, NULL, 16, 1, '2025-11-19 19:04:48.430', N'fa fa-dashboard');
+INSERT INTO Recon_POC.dbo.tbl_pages
+(ipage, page_name, controller, action_name, parent_id, is_active, systemdatetime, icon)
+VALUES(158, N'Arbitration Report', N'DisputeManagement', N'ArbitrationReport', 125, 1, '2025-11-19 19:04:48.430', N'fa fa-dashboard');
+INSERT INTO Recon_POC.dbo.tbl_pages
+(ipage, page_name, controller, action_name, parent_id, is_active, systemdatetime, icon)
+VALUES(159, N'Response Code Report', N'Configurations', N'ResponseCodeReport', 157, 1, '2025-11-21 16:20:36.720', N'fa fa-dashboard');
+INSERT INTO Recon_POC.dbo.tbl_pages
+(ipage, page_name, controller, action_name, parent_id, is_active, systemdatetime, icon)
+VALUES(160, N'Shutter Damage Counter Report', N'DisputeManagement', N'ShutterDamageReport', 125, 1, '2025-11-21 20:53:33.457', N'fa fa-dashboard');
+INSERT INTO Recon_POC.dbo.tbl_pages
+(ipage, page_name, controller, action_name, parent_id, is_active, systemdatetime, icon)
+VALUES(161, N'Machine Counter Report', N'DisputeManagement', N'MachineCouterReport', 125, 1, '2025-11-21 21:20:31.267', N'fa fa-dashboard');
+INSERT INTO Recon_POC.dbo.tbl_pages
+(ipage, page_name, controller, action_name, parent_id, is_active, systemdatetime, icon)
+VALUES(162, N'Shutter Fraud Report', N'DisputeManagement', N'ShutterFraudReport', 125, 1, '2025-11-21 21:32:12.790', N'fa fa-dashboard');
+INSERT INTO Recon_POC.dbo.tbl_pages
+(ipage, page_name, controller, action_name, parent_id, is_active, systemdatetime, icon)
+VALUES(163, N'Force Settlement Txns', N'Configurations', N'ForceSettlementTxnProcess', 157, 1, '2025-11-25 21:26:20.007', N'fa fa-dashboard');
+INSERT INTO Recon_POC.dbo.tbl_pages
+(ipage, page_name, controller, action_name, parent_id, is_active, systemdatetime, icon)
+VALUES(164, N'Force Settlement Report', N'DailyReports', N'ForcedSettledReport', 127, 1, '2025-11-27 05:45:21.467', N'fa fa-dashboard');
+INSERT INTO Recon_POC.dbo.tbl_pages
+(ipage, page_name, controller, action_name, parent_id, is_active, systemdatetime, icon)
+VALUES(165, N'DispenceSummaryReport', N'SummaryReports', N'DispenseSummaryReport', 25, 1, '2025-11-28 17:16:32.580', N'fa fa-dashboard');
+INSERT INTO Recon_POC.dbo.tbl_pages
+(ipage, page_name, controller, action_name, parent_id, is_active, systemdatetime, icon)
+VALUES(166, N'ClientManagement', NULL, NULL, 16, 1, '2025-11-29 22:34:13.190', N'fa fa-dashboard');
+INSERT INTO Recon_POC.dbo.tbl_pages
+(ipage, page_name, controller, action_name, parent_id, is_active, systemdatetime, icon)
+VALUES(167, N'BinUpload', N'ClientManagement', N'BinUpload', 166, 1, '2025-11-30 17:03:19.837', N'fa fa-dashboard');
+INSERT INTO Recon_POC.dbo.tbl_pages
+(ipage, page_name, controller, action_name, parent_id, is_active, systemdatetime, icon)
+VALUES(168, N'EJ Upload Status Report', N'ReconDetails', N'EjUploadStatusReport', 32, 1, '2025-12-25 17:28:39.480', N'fa fa-dashboard');
+INSERT INTO Recon_POC.dbo.tbl_pages
+(ipage, page_name, controller, action_name, parent_id, is_active, systemdatetime, icon)
+VALUES(169, N'Role Creation', N'CreateRole', N'RoleCreation', 75, 1, '2025-12-27 04:06:36.260', N'fa fa-dashboard');
+INSERT INTO Recon_POC.dbo.tbl_pages
+(ipage, page_name, controller, action_name, parent_id, is_active, systemdatetime, icon)
+VALUES(170, N'No Txn Terminal Report', N'ExceptionReports', N'NoTxnTerminalReport', 122, 1, '2026-01-05 18:25:34.290', N'fa fa-dashboard');
+INSERT INTO Recon_POC.dbo.tbl_pages
+(ipage, page_name, controller, action_name, parent_id, is_active, systemdatetime, icon)
+VALUES(171, N'EJAnalyzer Report', N'ExceptionReports', N'EJAnalyzerReport', 122, 1, '2026-01-05 18:26:22.477', N'fa fa-dashboard');
+INSERT INTO Recon_POC.dbo.tbl_pages
+(ipage, page_name, controller, action_name, parent_id, is_active, systemdatetime, icon)
+VALUES(172, N'Transaction Search', N'Search', N'TransactionSearch', 149, 1, '2026-01-05 19:20:36.940', N'fa fa-dashboard');
+INSERT INTO Recon_POC.dbo.tbl_pages
+(ipage, page_name, controller, action_name, parent_id, is_active, systemdatetime, icon)
+VALUES(173, N'Recon Master', N'ReconDetails', N'FileuploaddataList', 32, 1, '2026-01-05 20:24:08.293', N'fa fa-dashboard');
+INSERT INTO Recon_POC.dbo.tbl_pages
+(ipage, page_name, controller, action_name, parent_id, is_active, systemdatetime, icon)
+VALUES(174, N'Activity Report', N'DailyReports', N'ActivityReport', 127, 1, '2026-01-05 21:56:36.643', N'fa fa-dashboard');
+INSERT INTO Recon_POC.dbo.tbl_pages
+(ipage, page_name, controller, action_name, parent_id, is_active, systemdatetime, icon)
+VALUES(175, N'Import History Report', N'DailyReports', N'ImportHistoryReport', 127, 1, '2026-01-06 10:42:25.540', N'fa fa-dashboard');
+INSERT INTO Recon_POC.dbo.tbl_pages
+(ipage, page_name, controller, action_name, parent_id, is_active, systemdatetime, icon)
+VALUES(176, N'Switch SuspectTxn Report ATM', N'DisputeManagement', N'SwitchSuspectTxnReportATM', 125, 1, '2026-01-06 11:07:57.180', N'fa fa-dashboard');
+INSERT INTO Recon_POC.dbo.tbl_pages
+(ipage, page_name, controller, action_name, parent_id, is_active, systemdatetime, icon)
+VALUES(177, N'Terminal Missing Report', N'ExceptionReports', N'TerminalMissingReport', 122, 1, '2026-01-11 18:10:08.500', N'fa fa-dashboard');
+INSERT INTO Recon_POC.dbo.tbl_pages
+(ipage, page_name, controller, action_name, parent_id, is_active, systemdatetime, icon)
+VALUES(178, N'Dashboard Analytics', N'Dashboard', N'DashboardAnalytics', 1, 1, '2026-02-24 15:25:42.940', N'fa fa-dashboard');
+INSERT INTO Recon_POC.dbo.tbl_pages
+(ipage, page_name, controller, action_name, parent_id, is_active, systemdatetime, icon)
+VALUES(179, N'CounterFiet BankNote Report', N'DailyReports', N'CounterFeitBankNoteReport', 127, 1, '2026-02-26 12:10:15.667', N'fa fa-dashboard');
+INSERT INTO Recon_POC.dbo.tbl_pages
+(ipage, page_name, controller, action_name, parent_id, is_active, systemdatetime, icon)
+VALUES(180, N'Retracted BankNote Report', N'DailyReports', N'RetractedBankNoteReport', 127, 1, '2026-02-26 12:34:43.220', N'fa fa-dashboard');
+
+
+
+
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(1, 1, 1, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(2, 2, 1, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(3, 3, 1, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(4, 4, 1, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(5, 5, 1, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(6, 6, 1, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(7, 7, 1, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(8, 8, 1, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(9, 9, 1, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(10, 10, 1, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(11, 11, 1, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(12, 12, 1, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(13, 13, 1, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(14, 14, 1, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(15, 15, 1, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(16, 16, 1, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(17, 17, 1, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(18, 18, 1, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(19, 19, 1, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(20, 20, 1, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(21, 21, 1, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(22, 22, 1, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(23, 23, 1, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(24, 24, 1, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(25, 25, 1, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(26, 26, 1, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(27, 28, 1, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(28, 29, 1, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(29, 30, 1, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(30, 31, 1, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(31, 32, 1, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(32, 33, 1, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(33, 34, 1, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(34, 35, 1, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(35, 36, 1, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(36, 37, 1, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(37, 38, 1, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(38, 39, 1, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(39, 40, 1, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(40, 41, 1, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(41, 42, 1, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(42, 43, 1, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(43, 44, 1, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(44, 45, 1, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(45, 46, 1, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(46, 47, 1, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(47, 48, 1, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(48, 49, 1, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(49, 50, 1, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(50, 51, 1, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(51, 52, 1, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(52, 53, 1, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(53, 54, 1, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(54, 55, 1, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(55, 56, 1, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(56, 57, 1, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(57, 58, 1, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(58, 59, 1, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(59, 60, 1, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(60, 61, 1, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(61, 62, 1, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(62, 63, 1, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(63, 64, 1, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(64, 65, 1, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(65, 66, 1, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(66, 67, 1, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(67, 68, 1, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(68, 69, 1, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(69, 70, 1, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(70, 71, 1, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(71, 72, 1, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(72, 73, 1, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(73, 74, 1, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(74, 75, 1, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(75, 76, 1, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(76, 77, 1, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(77, 78, 1, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(78, 79, 1, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(79, 80, 1, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(80, 81, 1, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(81, 82, 1, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(82, 27, 1, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(83, 1, 2, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(84, 2, 2, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(85, 3, 2, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(86, 4, 2, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(87, 5, 2, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(88, 6, 2, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(89, 7, 2, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(90, 8, 2, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(91, 83, 1, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(92, 84, 1, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(93, 85, 1, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(94, 86, 1, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(163, 32, 5, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(164, 33, 5, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(181, 50, 5, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(182, 51, 5, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(183, 52, 5, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(184, 53, 5, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(185, 54, 5, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(186, 55, 5, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(187, 56, 5, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(188, 57, 5, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(189, 58, 5, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(190, 59, 5, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(191, 60, 5, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(192, 61, 5, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(193, 62, 5, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(194, 63, 5, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(195, 64, 5, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(196, 65, 5, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(197, 66, 5, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(200, 31, 5, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(203, 34, 5, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(204, 35, 5, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(205, 36, 5, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(206, 37, 5, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(207, 38, 5, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(208, 39, 5, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(209, 40, 5, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(210, 41, 5, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(211, 42, 5, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(212, 43, 5, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(213, 44, 5, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(214, 45, 5, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(215, 46, 5, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(216, 47, 5, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(217, 48, 5, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(218, 49, 5, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(219, 31, 6, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(220, 32, 6, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(221, 33, 6, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(222, 96, 1, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(223, 97, 1, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(224, 101, 1, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(225, 102, 1, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(226, 119, 1, 1, '2025-09-29');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(227, 122, 1, 1, '2025-09-30');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(228, 123, 1, 1, '2025-09-30');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(229, 124, 1, 1, '2025-10-01');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(230, 125, 1, 1, '2025-10-01');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(231, 126, 1, 1, '2025-10-01');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(232, 127, 1, 1, '2025-10-01');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(233, 128, 1, 1, '2025-10-01');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(234, 129, 1, 1, '2025-10-02');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(235, 130, 1, 1, '2025-10-02');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(236, 131, 1, 1, '2025-10-02');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(237, 132, 1, 1, '2025-10-03');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(238, 133, 1, 1, '2025-10-03');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(239, 134, 1, 1, '2025-10-03');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(240, 135, 1, 1, '2025-10-03');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(241, 137, 1, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(242, 138, 1, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(243, 139, 1, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(244, 140, 1, 1, '2025-08-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(245, 141, 1, 1, '2025-11-13');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(246, 142, 1, 1, '2025-11-13');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(247, 143, 1, 1, '2025-11-15');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(248, 144, 1, 1, '2025-11-15');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(249, 145, 1, 1, '2025-11-15');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(250, 146, 1, 1, '2025-11-15');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(251, 147, 1, 1, '2025-11-15');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(252, 148, 1, 1, '2025-11-16');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(253, 149, 1, 1, '2025-11-17');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(254, 150, 1, 1, '2025-11-17');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(255, 151, 1, 1, '2025-11-17');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(256, 152, 1, 1, '2025-11-17');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(257, 153, 1, 1, '2025-11-17');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(258, 154, 1, 1, '2025-11-17');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(259, 155, 1, 1, '2025-11-17');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(260, 156, 1, 1, '2025-11-17');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(261, 157, 1, 1, '2025-11-17');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(262, 158, 1, 1, '2025-11-18');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(263, 159, 1, 1, '2025-11-19');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(264, 160, 1, 1, '2025-11-20');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(266, 161, 1, 1, '2025-11-21');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(267, 162, 1, 1, '2025-11-21');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(268, 163, 1, 1, '2025-11-21');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(269, 164, 1, 1, '2025-11-21');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(270, 165, 1, 1, '2025-11-21');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(272, 166, 1, 1, '2025-11-25');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(273, 167, 1, 1, '2025-11-27');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(274, 168, 1, 1, '2025-11-28');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(275, 169, 1, 1, '2025-11-30');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(308, 8, 2, 1, '2025-12-27');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(453, 174, 1, 1, '2026-01-04');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(454, 175, 1, 1, '2026-01-04');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(455, 176, 1, 1, '2026-01-04');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(457, 1, 8, 1, '2026-01-05');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(458, 2, 8, 1, '2026-01-05');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(459, 87, 8, 1, '2026-01-05');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(460, 16, 8, 1, '2026-01-05');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(564, 170, 1, 1, '2026-01-05');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(565, 171, 1, 1, '2026-01-05');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(566, 120, 1, 1, '2026-01-05');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(567, 121, 1, 1, '2026-01-05');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(568, 136, 1, 1, '2026-01-05');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(569, 172, 1, 1, '2026-01-05');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(909, 173, 1, 1, '2026-01-05');
