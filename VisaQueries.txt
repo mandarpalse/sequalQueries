@@ -951,3 +951,76 @@ BEGIN
 END;
 GO
 ```
+
+
+
+
+```sql
+CREATE OR ALTER FUNCTION dbo.usp_isdatewithformat
+(
+    @p_date       VARCHAR(100),
+    @p_dateformat VARCHAR(50)
+)
+RETURNS BIT
+AS
+BEGIN
+    DECLARE @result BIT = 0;
+    DECLARE @format_code INT;
+
+    -- Map PostgreSQL-style format strings to SQL Server styles
+    SET @format_code =
+        CASE LOWER(@p_dateformat)
+            WHEN 'yyyymmdd' THEN 112
+            WHEN 'yyyy-mm-dd' THEN 23
+            WHEN 'dd/mm/yyyy' THEN 103
+            WHEN 'mm/dd/yyyy' THEN 101
+            WHEN 'dd-mm-yyyy' THEN 105
+            WHEN 'yyyy/mm/dd' THEN 111
+            WHEN 'yyyymm' THEN 112
+            ELSE NULL
+        END;
+
+    IF @p_date IS NOT NULL AND @format_code IS NOT NULL
+       AND TRY_CONVERT(DATE, @p_date, @format_code) IS NOT NULL
+    BEGIN
+        SET @result = 1;
+    END;
+
+    RETURN @result;
+END;
+GO
+```
+
+
+```sql
+CREATE OR ALTER FUNCTION dbo.usp_getvisadate
+(
+    @p_mmdd VARCHAR(4)
+)
+RETURNS DATE
+AS
+BEGIN
+    DECLARE @finaldateQuery VARCHAR(8) = '';
+    DECLARE @v_todaydate VARCHAR(4);
+    DECLARE @v_todayyear VARCHAR(4);
+    DECLARE @result DATE;
+
+    SET @v_todaydate = FORMAT(GETDATE(), 'MMdd');
+    SET @v_todayyear = FORMAT(GETDATE(), 'yyyy');
+
+    IF CAST(@v_todaydate AS INT) < CAST(@p_mmdd AS INT)
+    BEGIN
+        SET @finaldateQuery =
+            CAST(CAST(@v_todayyear AS INT) - 1 AS VARCHAR(4)) + @p_mmdd;
+    END
+    ELSE
+    BEGIN
+        SET @finaldateQuery = @v_todayyear + @p_mmdd;
+    END;
+
+    SET @result = TRY_CONVERT(DATE, @finaldateQuery, 112);
+
+    RETURN @result;
+END;
+GO
+```
