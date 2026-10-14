@@ -1314,6 +1314,7 @@ VALUES(180, N'Retracted BankNote Report', N'DailyReports', N'RetractedBankNoteRe
 
 
 
+
 INSERT INTO Recon_POC.dbo.tbl_page_access
 (id, ref_ipage, role_id, is_active, systemdatetime)
 VALUES(1, 1, 1, 1, '2025-08-20');
@@ -1914,3 +1915,240 @@ VALUES(569, 172, 1, 1, '2026-01-05');
 INSERT INTO Recon_POC.dbo.tbl_page_access
 (id, ref_ipage, role_id, is_active, systemdatetime)
 VALUES(909, 173, 1, 1, '2026-01-05');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(912, 118, 1, 1, '2026-01-05');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(914, 1, 3, 1, '2026-01-06');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(915, 2, 3, 1, '2026-01-06');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(916, 12, 3, 1, '2026-01-06');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(917, 16, 3, 1, '2026-01-06');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(922, 134, 3, 1, '2026-01-06');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(923, 149, 3, 1, '2026-01-06');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(924, 157, 3, 1, '2026-01-06');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(926, 25, 3, 1, '2026-01-06');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(927, 119, 3, 1, '2026-01-06');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(928, 120, 3, 1, '2026-01-06');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(929, 121, 3, 1, '2026-01-06');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(930, 131, 3, 1, '2026-01-06');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(931, 132, 3, 1, '2026-01-06');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(932, 133, 3, 1, '2026-01-06');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(933, 152, 3, 1, '2026-01-06');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(934, 154, 3, 1, '2026-01-06');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(935, 165, 3, 1, '2026-01-06');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(936, 31, 3, 1, '2026-01-06');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(938, 32, 3, 1, '2026-01-06');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(939, 118, 3, 1, '2026-01-06');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(940, 137, 3, 1, '2026-01-06');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(941, 168, 3, 1, '2026-01-06');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(943, 122, 3, 1, '2026-01-06');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(944, 123, 3, 1, '2026-01-06');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(945, 124, 3, 1, '2026-01-06');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(946, 143, 3, 1, '2026-01-06');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(947, 144, 3, 1, '2026-01-06');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(948, 145, 3, 1, '2026-01-06');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(949, 146, 3, 1, '2026-01-06');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(950, 147, 3, 1, '2026-01-06');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(951, 170, 3, 1, '2026-01-06');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(952, 171, 3, 1, '2026-01-06');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(953, 125, 3, 1, '2026-01-06');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(954, 126, 3, 1, '2026-01-06');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(955, 138, 3, 1, '2026-01-06');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(956, 139, 3, 1, '2026-01-06');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(957, 148, 3, 1, '2026-01-06');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(958, 158, 3, 1, '2026-01-06');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(959, 160, 3, 1, '2026-01-06');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(960, 161, 3, 1, '2026-01-06');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(961, 162, 3, 1, '2026-01-06');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(962, 127, 3, 1, '2026-01-06');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(963, 128, 3, 1, '2026-01-06');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(964, 129, 3, 1, '2026-01-06');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(965, 130, 3, 1, '2026-01-06');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(966, 136, 3, 1, '2026-01-06');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(967, 153, 3, 1, '2026-01-06');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(968, 155, 3, 1, '2026-01-06');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(969, 156, 3, 1, '2026-01-06');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(970, 164, 3, 1, '2026-01-06');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(972, 135, 3, 1, '2026-01-06');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(973, 140, 3, 1, '2026-01-06');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(974, 141, 3, 1, '2026-01-06');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(975, 142, 3, 1, '2026-01-06');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(977, 150, 3, 1, '2026-01-06');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(978, 172, 3, 1, '2026-01-06');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(980, 159, 3, 1, '2026-01-06');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(981, 163, 3, 1, '2026-01-06');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(1012, 177, 1, 1, '2026-01-11');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(1013, 177, 3, 1, '2026-01-11');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(1018, 1, 23, 1, '2026-01-11');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(1019, 2, 23, 1, '2026-01-11');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(1020, 16, 23, 1, '2026-01-11');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(1021, 122, 23, 1, '2026-01-11');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(1022, 123, 23, 1, '2026-01-11');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(1043, 176, 3, 1, '2026-01-11');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(1044, 173, 3, 1, '2026-01-11');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(1045, 175, 3, 1, '2026-01-11');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(1046, 174, 3, 1, '2026-01-11');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(1047, 179, 1, 1, '2026-02-26');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(1048, 180, 1, 1, '2026-02-26');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(1049, 179, 3, 1, '2026-02-26');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(1050, 180, 3, 1, '2026-02-26');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(1051, 178, 1, 1, '2026-03-23');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(1052, 178, 2, 1, '2026-03-23');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(1053, 178, 8, 1, '2026-03-23');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(1054, 178, 3, 1, '2026-03-23');
+INSERT INTO Recon_POC.dbo.tbl_page_access
+(id, ref_ipage, role_id, is_active, systemdatetime)
+VALUES(1055, 178, 23, 1, '2026-03-23');
