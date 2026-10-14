@@ -1,0 +1,953 @@
+
+
+
+```sql
+CREATE TABLE dbo.visa_data (
+    id BIGINT IDENTITY(1,1) NOT NULL,
+    fmid INT NULL,
+    fileprocessid INT NULL,
+    bankid INT NULL,
+    systemdatetime DATETIME2 DEFAULT SYSDATETIME() NULL,
+    card_number VARCHAR(1000) NULL,
+    date1 VARCHAR(1000) NULL,
+    req_amount VARCHAR(1000) NULL,
+    terminal_id VARCHAR(1000) NULL,
+    txn_code VARCHAR(1000) NULL,
+    resp_code VARCHAR(1000) NULL,
+    floor_lmt_ind VARCHAR(1000) NULL,
+    arn_no VARCHAR(1000) NULL,
+    acq_bus_id VARCHAR(1000) NULL,
+    req_curr_code VARCHAR(1000) NULL,
+    sett_amt VARCHAR(MAX) NULL,
+    sett_curr_code VARCHAR(1000) NULL,
+    merc_name VARCHAR(MAX) NULL,
+    merc_city VARCHAR(MAX) NULL,
+    mer_country_code VARCHAR(1000) NULL,
+    mcc_code VARCHAR(1000) NULL,
+    merc_zip_code VARCHAR(1000) NULL,
+    usage_code VARCHAR(1000) NULL,
+    chrgbck_reason_code VARCHAR(MAX) NULL,
+    sett_flag VARCHAR(1000) NULL,
+    auth_char_ind VARCHAR(1000) NULL,
+    auth_code VARCHAR(1000) NULL,
+    pos_terminal VARCHAR(1000) NULL,
+    card_holder_id VARCHAR(1000) NULL,
+    pos_entry_mode VARCHAR(1000) NULL,
+    cent_proc_date VARCHAR(1000) NULL,
+    reimb_attribute VARCHAR(MAX) NULL,
+    char_bck_ref_no VARCHAR(1000) NULL,
+    special_cond VARCHAR(1000) NULL,
+    card_accpt_id VARCHAR(1000) NULL,
+    nat_reimb_fee VARCHAR(1000) NULL,
+    trace_no VARCHAR(1000) NULL,
+    serv_development VARCHAR(1000) NULL,
+    cashback_amount VARCHAR(1000) NULL,
+    txn_id VARCHAR(1000) NULL,
+    auth_curr_amount VARCHAR(1000) NULL,
+    multl_clear_number VARCHAR(MAX) NULL,
+    multl_clear_number2 VARCHAR(MAX) NULL,
+    total_autho_amt VARCHAR(1000) NULL,
+    intch_fee_amt VARCHAR(1000) NULL,
+    src_base_cur_ex_rate VARCHAR(MAX) NULL,
+    base_dist_cur_ex_rate VARCHAR(MAX) NULL,
+    opt_iss_isa_amt VARCHAR(1000) NULL,
+    prod_id VARCHAR(1000) NULL,
+    upload_on_date VARCHAR(1000) NULL,
+    process_date VARCHAR(1000) NULL,
+    visa_flag VARCHAR(1000) NULL,
+    force_switch_flag VARCHAR(1000) NULL,
+    _id VARCHAR(1000) NULL,
+    system_code VARCHAR(1000) NULL,
+    chg_back_flag VARCHAR(1000) NULL,
+    chg_bck_date VARCHAR(1000) NULL,
+    force_chg_flag VARCHAR(1000) NULL,
+    force_chg_date VARCHAR(1000) NULL,
+    mct_flag VARCHAR(1000) NULL,
+    forced_user VARCHAR(MAX) NULL,
+    time1 VARCHAR(MAX) NULL,
+    tran_type VARCHAR(MAX) NULL,
+    pos_con VARCHAR(MAX) NULL,
+    currency_flag VARCHAR(MAX) NULL,
+    filename VARCHAR(MAX) NULL
+);
+GO
+
+CREATE NONCLUSTERED INDEX visa_data_fileprocessid_idx
+    ON dbo.visa_data (fileprocessid);
+GO
+```
+
+
+
+```sql
+CREATE TABLE dbo.visa
+(
+    id BIGINT IDENTITY(1,1) NOT NULL,
+    fmid INT NULL,
+    fileprocessid INT NULL,
+    bankid INT NULL,
+    systemdatetime DATETIME2 DEFAULT SYSDATETIME() NULL,
+    card_number VARCHAR(1000) NULL,
+    date1 VARCHAR(1000) NULL,
+    req_amount VARCHAR(1000) NULL,
+    terminal_id VARCHAR(1000) NULL,
+    txn_code VARCHAR(1000) NULL,
+    resp_code VARCHAR(1000) NULL,
+    floor_lmt_ind VARCHAR(1000) NULL,
+    arn_no VARCHAR(1000) NULL,
+    acq_bus_id VARCHAR(1000) NULL,
+    req_curr_code VARCHAR(1000) NULL,
+    sett_amt VARCHAR(1000) NULL,
+    sett_curr_code VARCHAR(1000) NULL,
+    merc_name VARCHAR(1000) NULL,
+    merc_city VARCHAR(1000) NULL,
+    mer_country_code VARCHAR(1000) NULL,
+    mcc_code VARCHAR(1000) NULL,
+    merc_zip_code VARCHAR(1000) NULL,
+    usage_code VARCHAR(1000) NULL,
+    chrgbck_reason_code VARCHAR(1000) NULL,
+    sett_flag VARCHAR(1000) NULL,
+    auth_char_ind VARCHAR(1000) NULL,
+    auth_code VARCHAR(1000) NULL,
+    pos_terminal VARCHAR(1000) NULL,
+    card_holder_id VARCHAR(1000) NULL,
+    pos_entry_mode VARCHAR(1000) NULL,
+    cent_proc_date VARCHAR(1000) NULL,
+    reimb_attribute VARCHAR(1000) NULL,
+    char_bck_ref_no VARCHAR(MAX) NULL,
+    special_cond VARCHAR(MAX) NULL,
+    card_accpt_id VARCHAR(MAX) NULL,
+    nat_reimb_fee VARCHAR(MAX) NULL,
+    trace_no VARCHAR(MAX) NULL,
+    serv_development VARCHAR(MAX) NULL,
+    cashback_amount VARCHAR(MAX) NULL,
+    txn_id VARCHAR(MAX) NULL,
+    auth_curr_amount VARCHAR(MAX) NULL,
+    multl_clear_number VARCHAR(MAX) NULL,
+    multl_clear_number2 VARCHAR(MAX) NULL,
+    total_autho_amt VARCHAR(MAX) NULL,
+    intch_fee_amt VARCHAR(MAX) NULL,
+    src_base_cur_ex_rate VARCHAR(MAX) NULL,
+    base_dist_cur_ex_rate VARCHAR(MAX) NULL,
+    opt_iss_isa_amt VARCHAR(MAX) NULL,
+    prod_id VARCHAR(MAX) NULL,
+    upload_on_date VARCHAR(MAX) NULL,
+    process_date VARCHAR(MAX) NULL,
+    visa_flag VARCHAR(MAX) NULL,
+    force_switch_flag VARCHAR(MAX) NULL,
+    _id VARCHAR(MAX) NULL,
+    system_code VARCHAR(MAX) NULL,
+    chg_back_flag VARCHAR(MAX) NULL,
+    chg_bck_date VARCHAR(MAX) NULL,
+    force_chg_flag VARCHAR(MAX) NULL,
+    force_chg_date VARCHAR(MAX) NULL,
+    mct_flag VARCHAR(MAX) NULL,
+    forced_user VARCHAR(MAX) NULL,
+    time1 VARCHAR(MAX) NULL,
+    tran_type VARCHAR(MAX) NULL,
+    pos_con VARCHAR(MAX) NULL,
+    currency_flag VARCHAR(MAX) NULL,
+    filename VARCHAR(MAX) NULL,
+    businessdate DATE NOT NULL,
+    ref_cbsissid BIGINT DEFAULT 0 NULL,
+    ref_switchid BIGINT DEFAULT 0 NULL,
+    tran_amt DECIMAL(20,2) NULL,
+    txndate DATE NULL,
+    ref_cbsiss_bdate DATE NULL,
+    ref_cbsiss_fid BIGINT NULL,
+    card_number_tendigit BIGINT NULL,
+    card_number_masked VARCHAR(15) NULL,
+    card_number_encrypted VARBINARY(MAX) NULL,
+    card_number_hashed VARCHAR(40) NULL,
+    cbs_txn_amount DECIMAL(20,2) NULL,
+    ref_switchfileid INT NULL,
+    ref_switchdate DATE NULL,
+    switchacc VARCHAR(200) NULL,
+    switchresp VARCHAR(200) NULL,
+    undebit_id INT DEFAULT 0 NULL,
+    undebit_fileid INT DEFAULT 0 NULL,
+    undebit_filedate DATE NULL,
+    presentrev_id INT DEFAULT 0 NULL,
+    presentrev_fileid INT DEFAULT 0 NULL,
+    presentrev_filedate DATE NULL,
+    undebit_amt DECIMAL(20,2) NULL,
+    dbt_acct_no VARCHAR(200) NULL,
+
+    CONSTRAINT visa_pk PRIMARY KEY (id, businessdate)
+);
+GO
+```
+
+
+```sql
+CREATE NONCLUSTERED INDEX visa_arn_no_idx
+    ON dbo.visa (arn_no);
+GO
+
+CREATE NONCLUSTERED INDEX visa_businessdate_idx
+    ON dbo.visa
+    (
+        businessdate,
+        txn_code,
+        usage_code,
+        ref_cbsissid
+    );
+GO
+```
+
+
+```sql
+CREATE OR ALTER PROCEDURE dbo.usp_visa_data_insert
+    @p_fileprocessid INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    DECLARE @err_context NVARCHAR(MAX);
+    DECLARE @v_temp_count BIGINT = 0;
+    DECLARE @v_data_count BIGINT = 0;
+
+    BEGIN TRY
+
+        -- Delete existing records for this file process
+        DELETE FROM dbo.Visa_Data
+        WHERE fileprocessid = @p_fileprocessid;
+
+        -- Update temporary transaction data
+        UPDATE dbo.Visa_Data_Temp
+        SET txnData_update = dbo.SplitString_str(txnData, '~')
+        WHERE fileProcessid = @p_fileprocessid;
+
+        -- Insert parsed transaction data
+        INSERT INTO dbo.Visa_Data
+        (
+            FMID,
+            fileProcessid,
+            bankid,
+            Card_Number,
+            Date1,
+            Req_Amount,
+            Terminal_ID,
+            Txn_Code,
+            Resp_Code,
+            Floor_Lmt_Ind,
+            ARN_No,
+            Acq_Bus_Id,
+            Req_Curr_Code,
+            Sett_Amt,
+            Sett_Curr_Code,
+            Merc_Name,
+            Merc_City,
+            Mer_Country_Code,
+            MCC_Code,
+            Merc_zip_code,
+            Usage_Code,
+            ChrgBck_Reason_Code,
+            Sett_Flag,
+            Auth_char_Ind,
+            Auth_Code,
+            Pos_Terminal,
+            Card_Holder_ID,
+            POS_Entry_Mode,
+            Cent_Proc_Date,
+            Reimb_Attribute,
+            Char_Bck_Ref_No,
+            Special_Cond,
+            Card_Accpt_ID,
+            Nat_Reimb_Fee,
+            Trace_No,
+            Serv_Development,
+            Cashback_Amount,
+            Txn_ID,
+            Auth_Curr_Amount,
+            Multl_Clear_Number,
+            Multl_Clear_Number2,
+            Total_Autho_Amt,
+            Intch_Fee_Amt,
+            Src_Base_Cur_Ex_Rate,
+            Base_Dist_Cur_Ex_Rate,
+            Opt_Iss_ISA_Amt,
+            Prod_ID,
+            Upload_On_Date,
+            Process_Date,
+            Visa_Flag,
+            force_switch_flag,
+            _ID,
+            System_Code,
+            chg_back_flag,
+            chg_bck_date,
+            force_chg_flag,
+            force_chg_date,
+            mct_flag,
+            forced_user,
+            Time1,
+            tran_type,
+            pos_con,
+            currency_flag,
+            FileName
+        )
+        SELECT
+            FMID,
+            fileProcessid,
+            bankid,
+
+            SUBSTRING(txnData_update,
+                CHARINDEX('|0_', txnData_update) + 3,
+                CHARINDEX('|1_', txnData_update)
+                    - (CHARINDEX('|0_', txnData_update) + 3)),
+
+            SUBSTRING(txnData_update,
+                CHARINDEX('|1_', txnData_update) + 3,
+                CHARINDEX('|2_', txnData_update)
+                    - (CHARINDEX('|1_', txnData_update) + 3)),
+
+            SUBSTRING(txnData_update,
+                CHARINDEX('|2_', txnData_update) + 3,
+                CHARINDEX('|3_', txnData_update)
+                    - (CHARINDEX('|2_', txnData_update) + 3)),
+
+            SUBSTRING(txnData_update,
+                CHARINDEX('|3_', txnData_update) + 3,
+                CHARINDEX('|4_', txnData_update)
+                    - (CHARINDEX('|3_', txnData_update) + 3)),
+
+            SUBSTRING(txnData_update,
+                CHARINDEX('|4_', txnData_update) + 3,
+                CHARINDEX('|5_', txnData_update)
+                    - (CHARINDEX('|4_', txnData_update) + 3)),
+
+            SUBSTRING(txnData_update,
+                CHARINDEX('|5_', txnData_update) + 3,
+                CHARINDEX('|6_', txnData_update)
+                    - (CHARINDEX('|5_', txnData_update) + 3)),
+
+            SUBSTRING(txnData_update,
+                CHARINDEX('|6_', txnData_update) + 3,
+                CHARINDEX('|7_', txnData_update)
+                    - (CHARINDEX('|6_', txnData_update) + 3)),
+
+            SUBSTRING(txnData_update,
+                CHARINDEX('|7_', txnData_update) + 3,
+                CHARINDEX('|8_', txnData_update)
+                    - (CHARINDEX('|7_', txnData_update) + 3)),
+
+            SUBSTRING(txnData_update,
+                CHARINDEX('|8_', txnData_update) + 3,
+                CHARINDEX('|9_', txnData_update)
+                    - (CHARINDEX('|8_', txnData_update) + 3)),
+
+            SUBSTRING(txnData_update,
+                CHARINDEX('|9_', txnData_update) + 3,
+                CHARINDEX('|10_', txnData_update)
+                    - (CHARINDEX('|9_', txnData_update) + 3)),
+
+            SUBSTRING(txnData_update,
+                CHARINDEX('|10_', txnData_update) + 4,
+                CHARINDEX('|11_', txnData_update)
+                    - (CHARINDEX('|10_', txnData_update) + 4)),
+
+            SUBSTRING(txnData_update,
+                CHARINDEX('|11_', txnData_update) + 4,
+                CHARINDEX('|12_', txnData_update)
+                    - (CHARINDEX('|11_', txnData_update) + 4)),
+
+            SUBSTRING(txnData_update,
+                CHARINDEX('|12_', txnData_update) + 4,
+                CHARINDEX('|13_', txnData_update)
+                    - (CHARINDEX('|12_', txnData_update) + 4)),
+
+            SUBSTRING(txnData_update,
+                CHARINDEX('|13_', txnData_update) + 4,
+                CHARINDEX('|14_', txnData_update)
+                    - (CHARINDEX('|13_', txnData_update) + 4)),
+
+            SUBSTRING(txnData_update,
+                CHARINDEX('|14_', txnData_update) + 4,
+                CHARINDEX('|15_', txnData_update)
+                    - (CHARINDEX('|14_', txnData_update) + 4)),
+
+            SUBSTRING(txnData_update,
+                CHARINDEX('|15_', txnData_update) + 4,
+                CHARINDEX('|16_', txnData_update)
+                    - (CHARINDEX('|15_', txnData_update) + 4)),
+
+            SUBSTRING(txnData_update,
+                CHARINDEX('|16_', txnData_update) + 4,
+                CHARINDEX('|17_', txnData_update)
+                    - (CHARINDEX('|16_', txnData_update) + 4)),
+
+            SUBSTRING(txnData_update,
+                CHARINDEX('|17_', txnData_update) + 4,
+                CHARINDEX('|18_', txnData_update)
+                    - (CHARINDEX('|17_', txnData_update) + 4)),
+
+            SUBSTRING(txnData_update,
+                CHARINDEX('|18_', txnData_update) + 4,
+                CHARINDEX('|19_', txnData_update)
+                    - (CHARINDEX('|18_', txnData_update) + 4)),
+
+            SUBSTRING(txnData_update,
+                CHARINDEX('|19_', txnData_update) + 4,
+                CHARINDEX('|20_', txnData_update)
+                    - (CHARINDEX('|19_', txnData_update) + 4)),
+
+            SUBSTRING(txnData_update,
+                CHARINDEX('|20_', txnData_update) + 4,
+                CHARINDEX('|21_', txnData_update)
+                    - (CHARINDEX('|20_', txnData_update) + 4)),
+
+            SUBSTRING(txnData_update,
+                CHARINDEX('|21_', txnData_update) + 4,
+                CHARINDEX('|22_', txnData_update)
+                    - (CHARINDEX('|21_', txnData_update) + 4)),
+
+            SUBSTRING(txnData_update,
+                CHARINDEX('|22_', txnData_update) + 4,
+                CHARINDEX('|23_', txnData_update)
+                    - (CHARINDEX('|22_', txnData_update) + 4)),
+
+            SUBSTRING(txnData_update,
+                CHARINDEX('|23_', txnData_update) + 4,
+                CHARINDEX('|24_', txnData_update)
+                    - (CHARINDEX('|23_', txnData_update) + 4)),
+
+            SUBSTRING(txnData_update,
+                CHARINDEX('|24_', txnData_update) + 4,
+                CHARINDEX('|25_', txnData_update)
+                    - (CHARINDEX('|24_', txnData_update) + 4)),
+
+            SUBSTRING(txnData_update,
+                CHARINDEX('|25_', txnData_update) + 4,
+                CHARINDEX('|26_', txnData_update)
+                    - (CHARINDEX('|25_', txnData_update) + 4)),
+
+            SUBSTRING(txnData_update,
+                CHARINDEX('|26_', txnData_update) + 4,
+                CHARINDEX('|27_', txnData_update)
+                    - (CHARINDEX('|26_', txnData_update) + 4)),
+
+            SUBSTRING(txnData_update,
+                CHARINDEX('|27_', txnData_update) + 4,
+                CHARINDEX('|28_', txnData_update)
+                    - (CHARINDEX('|27_', txnData_update) + 4)),
+
+            SUBSTRING(txnData_update,
+                CHARINDEX('|28_', txnData_update) + 4,
+                CHARINDEX('|29_', txnData_update)
+                    - (CHARINDEX('|28_', txnData_update) + 4)),
+
+            SUBSTRING(txnData_update,
+                CHARINDEX('|29_', txnData_update) + 4,
+                CHARINDEX('|30_', txnData_update)
+                    - (CHARINDEX('|29_', txnData_update) + 4)),
+
+            SUBSTRING(txnData_update,
+                CHARINDEX('|30_', txnData_update) + 4,
+                CHARINDEX('|31_', txnData_update)
+                    - (CHARINDEX('|30_', txnData_update) + 4)),
+
+            SUBSTRING(txnData_update,
+                CHARINDEX('|31_', txnData_update) + 4,
+                CHARINDEX('|32_', txnData_update)
+                    - (CHARINDEX('|31_', txnData_update) + 4)),
+
+            SUBSTRING(txnData_update,
+                CHARINDEX('|32_', txnData_update) + 4,
+                CHARINDEX('|33_', txnData_update)
+                    - (CHARINDEX('|32_', txnData_update) + 4)),
+
+            SUBSTRING(txnData_update,
+                CHARINDEX('|33_', txnData_update) + 4,
+                CHARINDEX('|34_', txnData_update)
+                    - (CHARINDEX('|33_', txnData_update) + 4)),
+
+            SUBSTRING(txnData_update,
+                CHARINDEX('|34_', txnData_update) + 4,
+                CHARINDEX('|35_', txnData_update)
+                    - (CHARINDEX('|34_', txnData_update) + 4)),
+
+            SUBSTRING(txnData_update,
+                CHARINDEX('|35_', txnData_update) + 4,
+                CHARINDEX('|36_', txnData_update)
+                    - (CHARINDEX('|35_', txnData_update) + 4)),
+
+            SUBSTRING(txnData_update,
+                CHARINDEX('|36_', txnData_update) + 4,
+                CHARINDEX('|37_', txnData_update)
+                    - (CHARINDEX('|36_', txnData_update) + 4)),
+
+            SUBSTRING(txnData_update,
+                CHARINDEX('|37_', txnData_update) + 4,
+                CHARINDEX('|38_', txnData_update)
+                    - (CHARINDEX('|37_', txnData_update) + 4)),
+
+            SUBSTRING(txnData_update,
+                CHARINDEX('|38_', txnData_update) + 4,
+                CHARINDEX('|39_', txnData_update)
+                    - (CHARINDEX('|38_', txnData_update) + 4)),
+
+            SUBSTRING(txnData_update,
+                CHARINDEX('|39_', txnData_update) + 4,
+                CHARINDEX('|40_', txnData_update)
+                    - (CHARINDEX('|39_', txnData_update) + 4)),
+
+            SUBSTRING(txnData_update,
+                CHARINDEX('|40_', txnData_update) + 4,
+                CHARINDEX('|41_', txnData_update)
+                    - (CHARINDEX('|40_', txnData_update) + 4)),
+
+            SUBSTRING(txnData_update,
+                CHARINDEX('|41_', txnData_update) + 4,
+                CHARINDEX('|42_', txnData_update)
+                    - (CHARINDEX('|41_', txnData_update) + 4)),
+
+            SUBSTRING(txnData_update,
+                CHARINDEX('|42_', txnData_update) + 4,
+                CHARINDEX('|43_', txnData_update)
+                    - (CHARINDEX('|42_', txnData_update) + 4)),
+
+            SUBSTRING(txnData_update,
+                CHARINDEX('|43_', txnData_update) + 4,
+                CHARINDEX('|44_', txnData_update)
+                    - (CHARINDEX('|43_', txnData_update) + 4)),
+
+            SUBSTRING(txnData_update,
+                CHARINDEX('|44_', txnData_update) + 4,
+                CHARINDEX('|45_', txnData_update)
+                    - (CHARINDEX('|44_', txnData_update) + 4)),
+
+            SUBSTRING(txnData_update,
+                CHARINDEX('|45_', txnData_update) + 4,
+                CHARINDEX('|46_', txnData_update)
+                    - (CHARINDEX('|45_', txnData_update) + 4)),
+
+            SUBSTRING(txnData_update,
+                CHARINDEX('|46_', txnData_update) + 4,
+                CHARINDEX('|47_', txnData_update)
+                    - (CHARINDEX('|46_', txnData_update) + 4)),
+
+            SUBSTRING(txnData_update,
+                CHARINDEX('|47_', txnData_update) + 4,
+                CHARINDEX('|48_', txnData_update)
+                    - (CHARINDEX('|47_', txnData_update) + 4)),
+
+            SUBSTRING(txnData_update,
+                CHARINDEX('|48_', txnData_update) + 4,
+                CHARINDEX('|49_', txnData_update)
+                    - (CHARINDEX('|48_', txnData_update) + 4)),
+
+            SUBSTRING(txnData_update,
+                CHARINDEX('|49_', txnData_update) + 4,
+                CHARINDEX('|50_', txnData_update)
+                    - (CHARINDEX('|49_', txnData_update) + 4)),
+
+            SUBSTRING(txnData_update,
+                CHARINDEX('|50_', txnData_update) + 4,
+                CHARINDEX('|51_', txnData_update)
+                    - (CHARINDEX('|50_', txnData_update) + 4)),
+
+            SUBSTRING(txnData_update,
+                CHARINDEX('|51_', txnData_update) + 4,
+                CHARINDEX('|52_', txnData_update)
+                    - (CHARINDEX('|51_', txnData_update) + 4)),
+
+            SUBSTRING(txnData_update,
+                CHARINDEX('|52_', txnData_update) + 4,
+                CHARINDEX('|53_', txnData_update)
+                    - (CHARINDEX('|52_', txnData_update) + 4)),
+
+            SUBSTRING(txnData_update,
+                CHARINDEX('|53_', txnData_update) + 4,
+                CHARINDEX('|54_', txnData_update)
+                    - (CHARINDEX('|53_', txnData_update) + 4)),
+
+            SUBSTRING(txnData_update,
+                CHARINDEX('|54_', txnData_update) + 4,
+                CHARINDEX('|55_', txnData_update)
+                    - (CHARINDEX('|54_', txnData_update) + 4)),
+
+            SUBSTRING(txnData_update,
+                CHARINDEX('|55_', txnData_update) + 4,
+                CHARINDEX('|56_', txnData_update)
+                    - (CHARINDEX('|55_', txnData_update) + 4)),
+
+            SUBSTRING(txnData_update,
+                CHARINDEX('|56_', txnData_update) + 4,
+                CHARINDEX('|57_', txnData_update)
+                    - (CHARINDEX('|56_', txnData_update) + 4)),
+
+            SUBSTRING(txnData_update,
+                CHARINDEX('|57_', txnData_update) + 4,
+                CHARINDEX('|58_', txnData_update)
+                    - (CHARINDEX('|57_', txnData_update) + 4)),
+
+            SUBSTRING(txnData_update,
+                CHARINDEX('|58_', txnData_update) + 4,
+                CHARINDEX('|59_', txnData_update)
+                    - (CHARINDEX('|58_', txnData_update) + 4)),
+
+            SUBSTRING(txnData_update,
+                CHARINDEX('|59_', txnData_update) + 4,
+                CHARINDEX('|60_', txnData_update)
+                    - (CHARINDEX('|59_', txnData_update) + 4)),
+
+            SUBSTRING(txnData_update,
+                CHARINDEX('|60_', txnData_update) + 4,
+                CHARINDEX('|61_', txnData_update)
+                    - (CHARINDEX('|60_', txnData_update) + 4))
+
+        FROM dbo.Visa_Data_Temp
+        WHERE fileProcessid = @p_fileprocessid;
+
+        -- Count inserted records
+        SELECT @v_data_count = COUNT_BIG(*)
+        FROM dbo.Visa_Data
+        WHERE fileprocessid = @p_fileprocessid;
+
+        -- Count temporary records
+        SELECT @v_temp_count = COUNT_BIG(*)
+        FROM dbo.Visa_Data_Temp
+        WHERE fileprocessid = @p_fileprocessid;
+
+        -- Update upload statistics
+        UPDATE dbo.fileuploaddata
+        SET
+            temp_tbl_count = @v_temp_count,
+            data_tbl_count = @v_data_count
+        WHERE id = @p_fileprocessid;
+
+    END TRY
+    BEGIN CATCH
+
+        SET @err_context =
+            CONCAT(
+                'Procedure: usp_visa_data_insert; ',
+                'Line: ', ERROR_LINE(), '; ',
+                'Procedure: ', COALESCE(ERROR_PROCEDURE(), ''),
+                '; Error: ', ERROR_MESSAGE()
+            );
+
+        -- Log error using the corresponding SQL Server procedure
+        EXEC dbo.usp_errorLog_insert
+            @p_message = CONCAT(
+                'p_fileprocessid: ',
+                @p_fileprocessid,
+                '| function : usp_visa_data_insert'
+            ),
+            @p_error_code = ERROR_NUMBER(),
+            @p_error_message = ERROR_MESSAGE(),
+            @p_error_context = @err_context,
+            @p_error_narration = 'function_error_Narration';
+
+        -- Rethrow the error if required by the calling application.
+        -- Uncomment the next line if the caller should receive the error.
+        -- THROW;
+
+    END CATCH
+END;
+GO
+```
+
+
+
+```sql
+CREATE OR ALTER PROCEDURE dbo.usp_visa_insert
+    @p_fileprocessid INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    DECLARE @v_businessdate DATE;
+    DECLARE @err_context NVARCHAR(MAX);
+    DECLARE @v_successcount BIGINT = 0;
+
+    BEGIN TRY
+
+        ------------------------------------------------------------
+        -- 1. Get business date from fileuploaddata
+        ------------------------------------------------------------
+        SELECT
+            @v_businessdate =
+                dbo.usp_convertjuliandate(
+                    '2025',
+                    SUBSTRING(filename, 11, 3)
+                )
+        FROM dbo.fileuploaddata
+        WHERE id = @p_fileprocessid;
+
+
+        ------------------------------------------------------------
+        -- 2. Check whether records already exist
+        ------------------------------------------------------------
+        IF NOT EXISTS
+        (
+            SELECT 1
+            FROM dbo.Visa
+            WHERE businessdate = @v_businessdate
+              AND fileprocessid = @p_fileprocessid
+        )
+        BEGIN
+
+            --------------------------------------------------------
+            -- 3. Delete existing matching records
+            -- Preserved from the original PostgreSQL function.
+            --------------------------------------------------------
+            DELETE FROM dbo.Visa
+            WHERE businessdate = @v_businessdate
+              AND fileprocessid = @p_fileprocessid;
+
+
+            --------------------------------------------------------
+            -- 4. Insert eligible transactions into Visa
+            --------------------------------------------------------
+            INSERT INTO dbo.Visa
+            (
+                FMID,
+                fileProcessid,
+                bankid,
+                Date1,
+                Req_Amount,
+                Terminal_ID,
+                Txn_Code,
+                Resp_Code,
+                Floor_Lmt_Ind,
+                ARN_No,
+                Acq_Bus_Id,
+                Req_Curr_Code,
+                Sett_Amt,
+                Sett_Curr_Code,
+                Merc_Name,
+                Merc_City,
+                Mer_Country_Code,
+                MCC_Code,
+                Merc_zip_code,
+                Usage_Code,
+                ChrgBck_Reason_Code,
+                Sett_Flag,
+                Auth_char_Ind,
+                Auth_Code,
+                Pos_Terminal,
+                Card_Holder_ID,
+                POS_Entry_Mode,
+                Cent_Proc_Date,
+                Reimb_Attribute,
+                Char_Bck_Ref_No,
+                Special_Cond,
+                Card_Accpt_ID,
+                Nat_Reimb_Fee,
+                Trace_No,
+                Serv_Development,
+                Cashback_Amount,
+                Txn_ID,
+                Auth_Curr_Amount,
+                Multl_Clear_Number,
+                Multl_Clear_Number2,
+                Total_Autho_Amt,
+                Intch_Fee_Amt,
+                Src_Base_Cur_Ex_Rate,
+                Base_Dist_Cur_Ex_Rate,
+                Opt_Iss_ISA_Amt,
+                Prod_ID,
+                Upload_On_Date,
+                Process_Date,
+                Visa_Flag,
+                force_switch_flag,
+                _ID,
+                System_Code,
+                chg_back_flag,
+                chg_bck_date,
+                force_chg_flag,
+                force_chg_date,
+                mct_flag,
+                forced_user,
+                Time1,
+                tran_type,
+                pos_con,
+                currency_flag,
+                FileName,
+                businessdate,
+                tran_amt,
+                txndate,
+                card_number_masked,
+                card_number_encrypted,
+                card_number_tendigit,
+                card_number_hashed
+            )
+            SELECT
+                FMID,
+                fileProcessid,
+                bankid,
+
+                LTRIM(RTRIM(Date1)),
+                LTRIM(RTRIM(Req_Amount)),
+                LTRIM(RTRIM(Terminal_ID)),
+                LTRIM(RTRIM(Txn_Code)),
+                LTRIM(RTRIM(Resp_Code)),
+                LTRIM(RTRIM(Floor_Lmt_Ind)),
+                LTRIM(RTRIM(ARN_No)),
+                LTRIM(RTRIM(Acq_Bus_Id)),
+                LTRIM(RTRIM(Req_Curr_Code)),
+                LTRIM(RTRIM(Sett_Amt)),
+                LTRIM(RTRIM(Sett_Curr_Code)),
+                LTRIM(RTRIM(Merc_Name)),
+                LTRIM(RTRIM(Merc_City)),
+                LTRIM(RTRIM(Mer_Country_Code)),
+                LTRIM(RTRIM(MCC_Code)),
+                LTRIM(RTRIM(Merc_zip_code)),
+                LTRIM(RTRIM(Usage_Code)),
+                LTRIM(RTRIM(ChrgBck_Reason_Code)),
+                LTRIM(RTRIM(Sett_Flag)),
+                LTRIM(RTRIM(Auth_char_Ind)),
+                LTRIM(RTRIM(Auth_Code)),
+                LTRIM(RTRIM(Pos_Terminal)),
+                LTRIM(RTRIM(Card_Holder_ID)),
+                LTRIM(RTRIM(POS_Entry_Mode)),
+                LTRIM(RTRIM(Cent_Proc_Date)),
+                LTRIM(RTRIM(Reimb_Attribute)),
+                LTRIM(RTRIM(Char_Bck_Ref_No)),
+                LTRIM(RTRIM(Special_Cond)),
+                LTRIM(RTRIM(Card_Accpt_ID)),
+                LTRIM(RTRIM(Nat_Reimb_Fee)),
+                LTRIM(RTRIM(Trace_No)),
+                LTRIM(RTRIM(Serv_Development)),
+                LTRIM(RTRIM(Cashback_Amount)),
+                LTRIM(RTRIM(Txn_ID)),
+                LTRIM(RTRIM(Auth_Curr_Amount)),
+                LTRIM(RTRIM(Multl_Clear_Number)),
+                LTRIM(RTRIM(Multl_Clear_Number2)),
+                LTRIM(RTRIM(Total_Autho_Amt)),
+                LTRIM(RTRIM(Intch_Fee_Amt)),
+                LTRIM(RTRIM(Src_Base_Cur_Ex_Rate)),
+                LTRIM(RTRIM(Base_Dist_Cur_Ex_Rate)),
+                LTRIM(RTRIM(Opt_Iss_ISA_Amt)),
+                LTRIM(RTRIM(Prod_ID)),
+                LTRIM(RTRIM(Upload_On_Date)),
+                LTRIM(RTRIM(Process_Date)),
+                LTRIM(RTRIM(Visa_Flag)),
+                LTRIM(RTRIM(force_switch_flag)),
+                LTRIM(RTRIM(_ID)),
+                LTRIM(RTRIM(System_Code)),
+                LTRIM(RTRIM(chg_back_flag)),
+                LTRIM(RTRIM(chg_bck_date)),
+                LTRIM(RTRIM(force_chg_flag)),
+                LTRIM(RTRIM(force_chg_date)),
+                LTRIM(RTRIM(mct_flag)),
+                LTRIM(RTRIM(forced_user)),
+                LTRIM(RTRIM(Time1)),
+                LTRIM(RTRIM(tran_type)),
+                LTRIM(RTRIM(pos_con)),
+                LTRIM(RTRIM(currency_flag)),
+                LTRIM(RTRIM(FileName)),
+
+                @v_businessdate,
+
+                -- Convert the first 12 characters of settlement
+                -- amount to a decimal, then divide by 100.
+                TRY_CONVERT(
+                    DECIMAL(20,2),
+                    LEFT(Sett_Amt, 12)
+                ) / 100.0,
+
+                -- Transaction date logic
+                CASE
+                    WHEN LEN(LTRIM(RTRIM(Date1))) = 4
+                    THEN
+                        CASE
+                            WHEN dbo.usp_isdatewithformat(
+                                CONCAT(
+                                    '2021',
+                                    LTRIM(RTRIM(Date1))
+                                ),
+                                'yyyymmdd'
+                            ) = 1
+                            THEN dbo.usp_getvisadate(
+                                LTRIM(RTRIM(Date1))
+                            )
+                            ELSE @v_businessdate
+                        END
+                    ELSE @v_businessdate
+                END,
+
+                -- Card number processing
+                dbo.ufn_maskpan(
+                    LTRIM(RTRIM(card_number))
+                ),
+
+                dbo.ufn_encryptpan(
+                    LTRIM(RTRIM(card_number))
+                ),
+
+                dbo.ufn_tendigitpan(
+                    LTRIM(RTRIM(card_number))
+                ),
+
+                dbo.ufn_hashpan(
+                    LTRIM(RTRIM(card_number))
+                )
+
+            FROM dbo.Visa_Data
+            WHERE fileProcessid = @p_fileprocessid
+              AND Txn_Code NOT IN ('40', '90');
+
+
+            --------------------------------------------------------
+            -- 5. Count inserted records for this file process
+            --------------------------------------------------------
+            SELECT
+                @v_successcount = COUNT_BIG(*)
+            FROM dbo.Visa
+            WHERE businessdate = @v_businessdate
+              AND fileprocessid = @p_fileprocessid;
+
+
+            --------------------------------------------------------
+            -- 6. Update upload statistics
+            --------------------------------------------------------
+            UPDATE dbo.fileuploaddata
+            SET
+                final_tbl_count = @v_successcount,
+                succrecord = @v_successcount,
+                businessdate = @v_businessdate
+            WHERE id = @p_fileprocessid;
+
+        END;
+
+    END TRY
+    BEGIN CATCH
+
+        ------------------------------------------------------------
+        -- 7. Capture error information
+        ------------------------------------------------------------
+        SET @err_context =
+            CONCAT(
+                'Procedure: usp_visa_insert; ',
+                'Line: ', ERROR_LINE(), '; ',
+                'Procedure: ', COALESCE(ERROR_PROCEDURE(), ''),
+                '; Error: ', ERROR_MESSAGE()
+            );
+
+
+        ------------------------------------------------------------
+        -- 8. Log the error
+        --
+        -- Adjust parameter names to match your SQL Server
+        -- usp_errorLog_insert procedure.
+        ------------------------------------------------------------
+        EXEC dbo.usp_errorLog_insert
+            @p_message = CONCAT(
+                'p_fileProcessid: ',
+                @p_fileprocessid,
+                '| function : usp_visa_insert'
+            ),
+            @p_error_code = ERROR_NUMBER(),
+            @p_error_message = ERROR_MESSAGE(),
+            @p_error_context = @err_context,
+            @p_error_narration = 'function_error_Narration';
+
+        -- The PostgreSQL function logs the error without
+        -- explicitly rethrowing it. This behavior is preserved.
+
+    END CATCH;
+END;
+GO
+```
