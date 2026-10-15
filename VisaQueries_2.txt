@@ -1,0 +1,883 @@
+CREATE OR ALTER PROCEDURE dbo.usp_visa46_data_insert
+    @p_fileprocessid INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    DECLARE
+        @err_context NVARCHAR(MAX),
+        @v_temp_count BIGINT = 0,
+        @v_data_count BIGINT = 0,
+        @error_message NVARCHAR(4000),
+        @error_number INT,
+        @error_line INT,
+        @error_procedure NVARCHAR(128);
+
+    BEGIN TRY
+
+        ------------------------------------------------------------
+        -- Step 1: Update temporary table
+        ------------------------------------------------------------
+        UPDATE Visa46_Data_Temp
+        SET txnData_update = dbo.SplitString_str(txnData, '|')
+        WHERE fileProcessid = @p_fileprocessid;
+
+
+        ------------------------------------------------------------
+        -- Step 2: Insert parsed data into Visa46_Data
+        ------------------------------------------------------------
+        INSERT INTO Visa46_Data
+        (
+            FMID,
+            fileProcessid,
+            bankid,
+            visa_col_1,
+            visa_col_2,
+            visa_col_3,
+            visa_col_4,
+            visa_col_5,
+            visa_col_6,
+            visa_col_7,
+            visa_col_8,
+            visa_col_9,
+            visa_col_10,
+            visa_col_11,
+            visa_col_12,
+            visa_col_13,
+            visa_col_14,
+            visa_col_15,
+            visa_col_16,
+            visa_col_17,
+            visa_col_18,
+            visa_col_19,
+            visa_col_20,
+            visa_col_21,
+            visa_col_22,
+            visa_col_23,
+            visa_col_24,
+            visa_col_25,
+            visa_col_26,
+            visa_col_27,
+            visa_col_28,
+            visa_col_29,
+            visa_col_30,
+            visa_col_31,
+            visa_col_32,
+            visa_col_33,
+            visa_col_34,
+            visa_col_35,
+            visa_col_36,
+            visa_col_37,
+            visa_col_38,
+            visa_col_39,
+            visa_col_40,
+            visa_col_41,
+            visa_col_42,
+            visa_col_43,
+            visa_col_44,
+            visa_col_45,
+            visa_col_46,
+            visa_col_47,
+            visa_col_48
+        )
+        SELECT
+            t.FMID,
+            t.fileProcessid,
+            t.bankid,
+
+            -- Fields 0 through 9
+            SUBSTRING(t.txnData_update,
+                CHARINDEX('|0_', t.txnData_update) + 3,
+                CHARINDEX('|1_', t.txnData_update)
+                    - (CHARINDEX('|0_', t.txnData_update) + 3)),
+
+            SUBSTRING(t.txnData_update,
+                CHARINDEX('|1_', t.txnData_update) + 3,
+                CHARINDEX('|2_', t.txnData_update)
+                    - (CHARINDEX('|1_', t.txnData_update) + 3)),
+
+            SUBSTRING(t.txnData_update,
+                CHARINDEX('|2_', t.txnData_update) + 3,
+                CHARINDEX('|3_', t.txnData_update)
+                    - (CHARINDEX('|2_', t.txnData_update) + 3)),
+
+            SUBSTRING(t.txnData_update,
+                CHARINDEX('|3_', t.txnData_update) + 3,
+                CHARINDEX('|4_', t.txnData_update)
+                    - (CHARINDEX('|3_', t.txnData_update) + 3)),
+
+            SUBSTRING(t.txnData_update,
+                CHARINDEX('|4_', t.txnData_update) + 3,
+                CHARINDEX('|5_', t.txnData_update)
+                    - (CHARINDEX('|4_', t.txnData_update) + 3)),
+
+            SUBSTRING(t.txnData_update,
+                CHARINDEX('|5_', t.txnData_update) + 3,
+                CHARINDEX('|6_', t.txnData_update)
+                    - (CHARINDEX('|5_', t.txnData_update) + 3)),
+
+            SUBSTRING(t.txnData_update,
+                CHARINDEX('|6_', t.txnData_update) + 3,
+                CHARINDEX('|7_', t.txnData_update)
+                    - (CHARINDEX('|6_', t.txnData_update) + 3)),
+
+            SUBSTRING(t.txnData_update,
+                CHARINDEX('|7_', t.txnData_update) + 3,
+                CHARINDEX('|8_', t.txnData_update)
+                    - (CHARINDEX('|7_', t.txnData_update) + 3)),
+
+            SUBSTRING(t.txnData_update,
+                CHARINDEX('|8_', t.txnData_update) + 3,
+                CHARINDEX('|9_', t.txnData_update)
+                    - (CHARINDEX('|8_', t.txnData_update) + 3)),
+
+            SUBSTRING(t.txnData_update,
+                CHARINDEX('|9_', t.txnData_update) + 3,
+                CHARINDEX('|10_', t.txnData_update)
+                    - (CHARINDEX('|9_', t.txnData_update) + 3)),
+
+            -- Fields 10 through 48
+            SUBSTRING(t.txnData_update,
+                CHARINDEX('|10_', t.txnData_update) + 4,
+                CHARINDEX('|11_', t.txnData_update)
+                    - (CHARINDEX('|10_', t.txnData_update) + 4)),
+
+            SUBSTRING(t.txnData_update,
+                CHARINDEX('|11_', t.txnData_update) + 4,
+                CHARINDEX('|12_', t.txnData_update)
+                    - (CHARINDEX('|11_', t.txnData_update) + 4)),
+
+            SUBSTRING(t.txnData_update,
+                CHARINDEX('|12_', t.txnData_update) + 4,
+                CHARINDEX('|13_', t.txnData_update)
+                    - (CHARINDEX('|12_', t.txnData_update) + 4)),
+
+            SUBSTRING(t.txnData_update,
+                CHARINDEX('|13_', t.txnData_update) + 4,
+                CHARINDEX('|14_', t.txnData_update)
+                    - (CHARINDEX('|13_', t.txnData_update) + 4)),
+
+            SUBSTRING(t.txnData_update,
+                CHARINDEX('|14_', t.txnData_update) + 4,
+                CHARINDEX('|15_', t.txnData_update)
+                    - (CHARINDEX('|14_', t.txnData_update) + 4)),
+
+            SUBSTRING(t.txnData_update,
+                CHARINDEX('|15_', t.txnData_update) + 4,
+                CHARINDEX('|16_', t.txnData_update)
+                    - (CHARINDEX('|15_', t.txnData_update) + 4)),
+
+            SUBSTRING(t.txnData_update,
+                CHARINDEX('|16_', t.txnData_update) + 4,
+                CHARINDEX('|17_', t.txnData_update)
+                    - (CHARINDEX('|16_', t.txnData_update) + 4)),
+
+            SUBSTRING(t.txnData_update,
+                CHARINDEX('|17_', t.txnData_update) + 4,
+                CHARINDEX('|18_', t.txnData_update)
+                    - (CHARINDEX('|17_', t.txnData_update) + 4)),
+
+            SUBSTRING(t.txnData_update,
+                CHARINDEX('|18_', t.txnData_update) + 4,
+                CHARINDEX('|19_', t.txnData_update)
+                    - (CHARINDEX('|18_', t.txnData_update) + 4)),
+
+            SUBSTRING(t.txnData_update,
+                CHARINDEX('|19_', t.txnData_update) + 4,
+                CHARINDEX('|20_', t.txnData_update)
+                    - (CHARINDEX('|19_', t.txnData_update) + 4)),
+
+            SUBSTRING(t.txnData_update,
+                CHARINDEX('|20_', t.txnData_update) + 4,
+                CHARINDEX('|21_', t.txnData_update)
+                    - (CHARINDEX('|20_', t.txnData_update) + 4)),
+
+            SUBSTRING(t.txnData_update,
+                CHARINDEX('|21_', t.txnData_update) + 4,
+                CHARINDEX('|22_', t.txnData_update)
+                    - (CHARINDEX('|21_', t.txnData_update) + 4)),
+
+            SUBSTRING(t.txnData_update,
+                CHARINDEX('|22_', t.txnData_update) + 4,
+                CHARINDEX('|23_', t.txnData_update)
+                    - (CHARINDEX('|22_', t.txnData_update) + 4)),
+
+            SUBSTRING(t.txnData_update,
+                CHARINDEX('|23_', t.txnData_update) + 4,
+                CHARINDEX('|24_', t.txnData_update)
+                    - (CHARINDEX('|23_', t.txnData_update) + 4)),
+
+            SUBSTRING(t.txnData_update,
+                CHARINDEX('|24_', t.txnData_update) + 4,
+                CHARINDEX('|25_', t.txnData_update)
+                    - (CHARINDEX('|24_', t.txnData_update) + 4)),
+
+            SUBSTRING(t.txnData_update,
+                CHARINDEX('|25_', t.txnData_update) + 4,
+                CHARINDEX('|26_', t.txnData_update)
+                    - (CHARINDEX('|25_', t.txnData_update) + 4)),
+
+            SUBSTRING(t.txnData_update,
+                CHARINDEX('|26_', t.txnData_update) + 4,
+                CHARINDEX('|27_', t.txnData_update)
+                    - (CHARINDEX('|26_', t.txnData_update) + 4)),
+
+            SUBSTRING(t.txnData_update,
+                CHARINDEX('|27_', t.txnData_update) + 4,
+                CHARINDEX('|28_', t.txnData_update)
+                    - (CHARINDEX('|27_', t.txnData_update) + 4)),
+
+            SUBSTRING(t.txnData_update,
+                CHARINDEX('|28_', t.txnData_update) + 4,
+                CHARINDEX('|29_', t.txnData_update)
+                    - (CHARINDEX('|28_', t.txnData_update) + 4)),
+
+            SUBSTRING(t.txnData_update,
+                CHARINDEX('|29_', t.txnData_update) + 4,
+                CHARINDEX('|30_', t.txnData_update)
+                    - (CHARINDEX('|29_', t.txnData_update) + 4)),
+
+            SUBSTRING(t.txnData_update,
+                CHARINDEX('|30_', t.txnData_update) + 4,
+                CHARINDEX('|31_', t.txnData_update)
+                    - (CHARINDEX('|30_', t.txnData_update) + 4)),
+
+            SUBSTRING(t.txnData_update,
+                CHARINDEX('|31_', t.txnData_update) + 4,
+                CHARINDEX('|32_', t.txnData_update)
+                    - (CHARINDEX('|31_', t.txnData_update) + 4)),
+
+            SUBSTRING(t.txnData_update,
+                CHARINDEX('|32_', t.txnData_update) + 4,
+                CHARINDEX('|33_', t.txnData_update)
+                    - (CHARINDEX('|32_', t.txnData_update) + 4)),
+
+            SUBSTRING(t.txnData_update,
+                CHARINDEX('|33_', t.txnData_update) + 4,
+                CHARINDEX('|34_', t.txnData_update)
+                    - (CHARINDEX('|33_', t.txnData_update) + 4)),
+
+            SUBSTRING(t.txnData_update,
+                CHARINDEX('|34_', t.txnData_update) + 4,
+                CHARINDEX('|35_', t.txnData_update)
+                    - (CHARINDEX('|34_', t.txnData_update) + 4)),
+
+            SUBSTRING(t.txnData_update,
+                CHARINDEX('|35_', t.txnData_update) + 4,
+                CHARINDEX('|36_', t.txnData_update)
+                    - (CHARINDEX('|35_', t.txnData_update) + 4)),
+
+            SUBSTRING(t.txnData_update,
+                CHARINDEX('|36_', t.txnData_update) + 4,
+                CHARINDEX('|37_', t.txnData_update)
+                    - (CHARINDEX('|36_', t.txnData_update) + 4)),
+
+            SUBSTRING(t.txnData_update,
+                CHARINDEX('|37_', t.txnData_update) + 4,
+                CHARINDEX('|38_', t.txnData_update)
+                    - (CHARINDEX('|37_', t.txnData_update) + 4)),
+
+            SUBSTRING(t.txnData_update,
+                CHARINDEX('|38_', t.txnData_update) + 4,
+                CHARINDEX('|39_', t.txnData_update)
+                    - (CHARINDEX('|38_', t.txnData_update) + 4)),
+
+            SUBSTRING(t.txnData_update,
+                CHARINDEX('|39_', t.txnData_update) + 4,
+                CHARINDEX('|40_', t.txnData_update)
+                    - (CHARINDEX('|39_', t.txnData_update) + 4)),
+
+            SUBSTRING(t.txnData_update,
+                CHARINDEX('|40_', t.txnData_update) + 4,
+                CHARINDEX('|41_', t.txnData_update)
+                    - (CHARINDEX('|40_', t.txnData_update) + 4)),
+
+            SUBSTRING(t.txnData_update,
+                CHARINDEX('|41_', t.txnData_update) + 4,
+                CHARINDEX('|42_', t.txnData_update)
+                    - (CHARINDEX('|41_', t.txnData_update) + 4)),
+
+            SUBSTRING(t.txnData_update,
+                CHARINDEX('|42_', t.txnData_update) + 4,
+                CHARINDEX('|43_', t.txnData_update)
+                    - (CHARINDEX('|42_', t.txnData_update) + 4)),
+
+            SUBSTRING(t.txnData_update,
+                CHARINDEX('|43_', t.txnData_update) + 4,
+                CHARINDEX('|44_', t.txnData_update)
+                    - (CHARINDEX('|43_', t.txnData_update) + 4)),
+
+            SUBSTRING(t.txnData_update,
+                CHARINDEX('|44_', t.txnData_update) + 4,
+                CHARINDEX('|45_', t.txnData_update)
+                    - (CHARINDEX('|44_', t.txnData_update) + 4)),
+
+            SUBSTRING(t.txnData_update,
+                CHARINDEX('|45_', t.txnData_update) + 4,
+                CHARINDEX('|46_', t.txnData_update)
+                    - (CHARINDEX('|45_', t.txnData_update) + 4)),
+
+            SUBSTRING(t.txnData_update,
+                CHARINDEX('|46_', t.txnData_update) + 4,
+                CHARINDEX('|47_', t.txnData_update)
+                    - (CHARINDEX('|46_', t.txnData_update) + 4)),
+
+            SUBSTRING(t.txnData_update,
+                CHARINDEX('|47_', t.txnData_update) + 4,
+                CHARINDEX('|48_', t.txnData_update)
+                    - (CHARINDEX('|47_', t.txnData_update) + 4))
+
+        FROM Visa46_Data_Temp AS t
+        WHERE t.fileProcessid = @p_fileprocessid;
+
+
+        ------------------------------------------------------------
+        -- Step 3: Count inserted data records
+        ------------------------------------------------------------
+        SELECT @v_data_count = COUNT_BIG(1)
+        FROM Visa46_Data
+        WHERE fileprocessid = @p_fileprocessid;
+
+
+        ------------------------------------------------------------
+        -- Step 4: Count temporary data records
+        ------------------------------------------------------------
+        SELECT @v_temp_count = COUNT_BIG(1)
+        FROM Visa46_Data_Temp
+        WHERE fileprocessid = @p_fileprocessid;
+
+
+        ------------------------------------------------------------
+        -- Step 5: Update file upload counts
+        ------------------------------------------------------------
+        UPDATE fileuploaddata
+        SET
+            temp_tbl_count = @v_temp_count,
+            data_tbl_count = @v_data_count
+        WHERE id = @p_fileprocessid;
+
+    END TRY
+
+    BEGIN CATCH
+
+        ------------------------------------------------------------
+        -- Step 6: Capture error information
+        ------------------------------------------------------------
+        SET @error_message = ERROR_MESSAGE();
+        SET @error_number = ERROR_NUMBER();
+        SET @error_line = ERROR_LINE();
+        SET @error_procedure = ERROR_PROCEDURE();
+
+        SET @err_context =
+            CONCAT(
+                'Procedure: ',
+                COALESCE(@error_procedure, 'usp_visa46_data_insert'),
+                '; Line: ',
+                @error_line,
+                '; Error Number: ',
+                @error_number
+            );
+
+
+        ------------------------------------------------------------
+        -- Step 7: Log the error
+        ------------------------------------------------------------
+        BEGIN TRY
+
+            EXEC dbo.usp_errorLog_insert
+                @p_message =
+                    CONCAT(
+                        'p_fileprocessid: ',
+                        @p_fileprocessid,
+                        '| function : usp_visa46_data_insert'
+                    ),
+                @p_error_code = @error_number,
+                @p_error_message = @error_message,
+                @p_error_context = @err_context,
+                @p_error_narration = 'function_error_Narration';
+
+        END TRY
+
+        BEGIN CATCH
+            -- Prevent a secondary logging failure from masking
+            -- the original error.
+        END CATCH;
+
+    END CATCH;
+
+END;
+GO
+
+
+
+
+CREATE OR ALTER PROCEDURE dbo.usp_visa46_insert
+    @p_fileprocessid INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    DECLARE
+        @v_businessdate DATE,
+        @err_context NVARCHAR(MAX),
+        @v_filename NVARCHAR(500),
+        @v_successcount BIGINT,
+        @v_error_message NVARCHAR(4000),
+        @v_error_number INT,
+        @v_error_line INT,
+        @v_error_procedure NVARCHAR(128);
+
+    BEGIN TRY
+
+        ------------------------------------------------------------
+        -- Step 1: Get business date and filename
+        ------------------------------------------------------------
+        SELECT
+            @v_businessdate =
+                dbo.usp_convertjuliandate(
+                    CONCAT('20', SUBSTRING(filename, 12, 2)),
+                    SUBSTRING(filename, 14, 3)
+                ),
+            @v_filename = filename
+        FROM dbo.fileuploaddata
+        WHERE id = @p_fileprocessid;
+
+
+        ------------------------------------------------------------
+        -- Step 2: Check whether data already exists
+        ------------------------------------------------------------
+        IF NOT EXISTS
+        (
+            SELECT 1
+            FROM dbo.Visa46
+            WHERE businessdate = @v_businessdate
+              AND fileprocessid = @p_fileprocessid
+        )
+        BEGIN
+
+            --------------------------------------------------------
+            -- Step 3: Insert data into Visa46
+            --------------------------------------------------------
+            INSERT INTO dbo.Visa46
+            (
+                FMID,
+                fileProcessid,
+                bankid,
+                visa_col_1,
+                visa_col_2,
+                visa_col_3,
+                visa_col_4,
+                visa_col_5,
+                visa_col_6,
+                visa_col_7,
+                visa_col_8,
+                visa_col_9,
+                visa_col_10,
+                visa_col_11,
+                visa_col_12,
+                visa_col_13,
+                visa_col_14,
+                visa_col_15,
+                visa_col_16,
+                visa_col_17,
+                visa_col_18,
+                visa_col_19,
+                visa_col_20,
+                visa_col_21,
+                visa_col_22,
+                visa_col_23,
+                visa_col_24,
+                visa_col_25,
+                visa_col_26,
+                visa_col_27,
+                visa_col_28,
+                visa_col_29,
+                visa_col_30,
+                visa_col_31,
+                visa_col_32,
+                visa_col_33,
+                visa_col_34,
+                visa_col_35,
+                visa_col_36,
+                visa_col_37,
+                visa_col_38,
+                visa_col_39,
+                visa_col_40,
+                visa_col_41,
+                visa_col_42,
+                visa_col_43,
+                visa_col_44,
+                visa_col_45,
+                visa_col_46,
+                visa_col_47,
+                visa_col_48,
+                businessdate,
+                filename
+            )
+            SELECT
+                FMID,
+                fileProcessid,
+                bankid,
+                visa_col_1,
+                visa_col_2,
+                visa_col_3,
+                visa_col_4,
+                visa_col_5,
+                visa_col_6,
+                visa_col_7,
+                visa_col_8,
+                visa_col_9,
+                visa_col_10,
+                visa_col_11,
+                visa_col_12,
+                visa_col_13,
+                visa_col_14,
+                visa_col_15,
+                visa_col_16,
+                visa_col_17,
+                visa_col_18,
+                visa_col_19,
+                visa_col_20,
+                visa_col_21,
+                visa_col_22,
+                visa_col_23,
+                visa_col_24,
+                visa_col_25,
+                visa_col_26,
+                visa_col_27,
+                visa_col_28,
+                visa_col_29,
+                visa_col_30,
+                visa_col_31,
+                visa_col_32,
+                visa_col_33,
+                visa_col_34,
+                visa_col_35,
+                visa_col_36,
+                visa_col_37,
+                visa_col_38,
+                visa_col_39,
+                visa_col_40,
+                visa_col_41,
+                visa_col_42,
+                visa_col_43,
+                visa_col_44,
+                visa_col_45,
+                visa_col_46,
+                visa_col_47,
+                visa_col_48,
+                @v_businessdate,
+                @v_filename
+            FROM dbo.Visa46_Data
+            WHERE fileProcessid = @p_fileprocessid;
+
+
+            --------------------------------------------------------
+            -- Step 4: Count successful records
+            --------------------------------------------------------
+            SELECT
+                @v_successcount = COUNT_BIG(1)
+            FROM dbo.Visa46
+            WHERE businessdate = @v_businessdate
+              AND fileprocessid = @p_fileprocessid;
+
+
+            --------------------------------------------------------
+            -- Step 5: Update file upload counts
+            --------------------------------------------------------
+            UPDATE dbo.fileuploaddata
+            SET
+                final_tbl_count = @v_successcount,
+                succrecord = @v_successcount,
+                businessdate = @v_businessdate
+            WHERE id = @p_fileprocessid;
+
+
+            --------------------------------------------------------
+            -- Step 6: Delete existing ISS report records
+            --------------------------------------------------------
+            DELETE FROM dbo.visa_iss_report
+            WHERE businessdate = @v_businessdate
+              AND fileprocessid = @p_fileprocessid;
+
+
+            --------------------------------------------------------
+            -- Step 7: Insert records into visa_iss_report
+            --------------------------------------------------------
+            INSERT INTO dbo.visa_iss_report
+            (
+                id,
+                fileprocessid,
+                businessdate,
+                filename,
+                bankid,
+                systemdatetime,
+                fmid,
+                tc_code,
+                destbin,
+                sourcebin,
+                terminal,
+                rolling,
+                fund_transfer_entity,
+                report_level,
+                record_level,
+                currency,
+                clearing_currency,
+                business_mod,
+                report_group,
+                report_sub_group,
+                report_id,
+                report_suffiex,
+                date_year,
+                report_date,
+                buiseness_tran_type,
+                business_trxn_cyc,
+                reversal_indicator,
+                first_amount,
+                first_sign,
+                second_amount,
+                second_sign,
+                third_amount,
+                third_sign,
+                fourth_amount,
+                four_sign,
+                fifth_amount,
+                fifth_sign,
+                six_amount,
+                six_sign,
+                firstcount,
+                summary_level,
+                report_tran_type,
+                tran_count,
+                crdeit_amount,
+                debit_amount,
+                net_amount,
+                deb_cre_ind,
+                visa_col_20
+            )
+            SELECT
+                vd.id,
+                vd.fileprocessid,
+                vd.businessdate,
+                vd.filename,
+                vd.bankid,
+                vd.systemdatetime,
+                vd.fmid,
+
+                -- Transaction and terminal details
+                vd.visa_col_1 AS TC_CODE,
+                vd.visa_col_4 AS DESTBIN,
+                vd.visa_col_5 AS SOURCEBIN,
+                vd.visa_col_6 AS TERMINAL,
+
+                CONCAT(vd.visa_col_7, vd.visa_col_8)
+                    AS ROLLING,
+
+                CONCAT(
+                    vd.visa_col_9,
+                    vd.visa_col_10,
+                    LEFT(vd.visa_col_11, 2)
+                ) AS FUND_TRANSFER_ENTITY,
+
+                -- Report classification
+                SUBSTRING(vd.visa_col_11, 3, 2)
+                    AS REPORT_LEVEL,
+
+                SUBSTRING(vd.visa_col_11, 5, 1)
+                    AS RECORD_LEVEL,
+
+                SUBSTRING(vd.visa_col_11, 6, 3)
+                    AS CURRENCY,
+
+                SUBSTRING(vd.visa_col_11, 9, 3)
+                    AS CLEARING_CURRENCY,
+
+                SUBSTRING(vd.visa_col_11, 12, 1)
+                    AS BUSINESS_MOD,
+
+                vd.visa_col_12 AS REPORT_GROUP,
+                vd.visa_col_13 AS REPORT_SUB_GROUP,
+                vd.visa_col_14 AS REPORT_ID,
+                vd.visa_col_15 AS REPORT_SUFFIEX,
+
+                -- Date fields
+                LEFT(vd.visa_col_16, 7)
+                    AS DATE_YEAR,
+
+                CONCAT(
+                    LEFT(vd.visa_col_16, 3),
+                    vd.visa_col_17
+                ) AS REPORT_DATE,
+
+                -- Business transaction classification
+                CASE
+                    WHEN LEFT(vd.visa_col_20, 1)
+                         NOT IN ('I', 'C', 'F', 'T')
+                    THEN LEFT(vd.visa_col_20, 3)
+                    ELSE ''
+                END AS BUISENESS_TRAN_TYPE,
+
+                CASE
+                    WHEN LEFT(vd.visa_col_20, 1)
+                         NOT IN ('I', 'C', 'F', 'T')
+                    THEN SUBSTRING(vd.visa_col_20, 4, 1)
+                    ELSE ''
+                END AS BUSINESS_TRXN_CYC,
+
+                CASE
+                    WHEN LEFT(vd.visa_col_20, 1)
+                         NOT IN ('I', 'C', 'F', 'T')
+                    THEN SUBSTRING(vd.visa_col_20, 5, 2)
+                    ELSE ''
+                END AS REVERSAL_INDICATOR,
+
+                -- Amounts and signs
+                vd.visa_col_37 AS FIRST_AMOUNT,
+                vd.visa_col_38 AS FIRST_SIGN,
+                vd.visa_col_39 AS SECOND_AMOUNT,
+                vd.visa_col_40 AS SECOND_SIGN,
+                vd.visa_col_41 AS THIRD_AMOUNT,
+                vd.visa_col_42 AS THIRD_SIGN,
+                vd.visa_col_43 AS FOURTH_AMOUNT,
+                vd.visa_col_44 AS FOUR_SIGN,
+                vd.visa_col_45 AS FIFTH_AMOUNT,
+                vd.visa_col_46 AS FIFTH_SIGN,
+                vd.visa_col_47 AS SIX_AMOUNT,
+                vd.visa_col_48 AS SIX_SIGN,
+
+                -- Summary and transaction counts
+                vd.visa_col_35 AS FIRSTCOUNT,
+
+                RIGHT(vd.visa_col_23, 2)
+                    AS SUMMARY_LEVEL,
+
+                CASE
+                    WHEN LEFT(vd.visa_col_20, 1)
+                         IN ('I', 'C', 'F', 'T')
+                    THEN LEFT(vd.visa_col_20, 2)
+                    ELSE ''
+                END AS REPORT_TRAN_TYPE,
+
+                CASE
+                    WHEN LEFT(vd.visa_col_20, 1)
+                         IN ('I', 'C', 'F', 'T')
+                    THEN SUBSTRING(
+                            vd.visa_col_20,
+                            3,
+                            LEN(vd.visa_col_20)
+                        )
+                    ELSE ''
+                END AS TRAN_COUNT,
+
+                vd.visa_col_21 AS CRDEIT_AMOUNT,
+
+                CONCAT(
+                    vd.visa_col_22,
+                    vd.visa_col_23,
+                    vd.visa_col_24
+                ) AS DEBIT_AMOUNT,
+
+                CONCAT(
+                    vd.visa_col_25,
+                    vd.visa_col_26,
+                    vd.visa_col_27,
+                    vd.visa_col_28,
+                    SUBSTRING(vd.visa_col_29, 1, 2)
+                ) AS NET_AMOUNT,
+
+                RIGHT(vd.visa_col_29, 2)
+                    AS DEB_CRE_IND,
+
+                vd.visa_col_20
+
+            FROM dbo.Visa46 AS vd
+            WHERE vd.businessdate = @v_businessdate
+              AND vd.fileProcessid = @p_fileprocessid;
+
+
+            --------------------------------------------------------
+            -- Step 8: Special report ID 140 updates
+            --------------------------------------------------------
+            UPDATE dbo.VISA_ISS_REPORT
+            SET
+                REPORT_TRAN_TYPE = LEFT(visa_col_20, 2),
+                buiseness_tran_type = SUBSTRING(visa_col_20, 4, 3),
+                BUSINESS_TRXN_CYC = SUBSTRING(visa_col_20, 7, 1),
+                REVERSAL_INDICATOR = SUBSTRING(visa_col_20, 8, 2)
+            WHERE REPORT_ID = '140'
+              AND TERMINAL = '1000130039'
+              AND ROLLING = '1000130039'
+              AND FUND_TRANSFER_ENTITY = '1000130039'
+              AND businessdate = @v_businessdate
+              AND fileProcessid = @p_fileprocessid;
+
+
+            UPDATE dbo.VISA_ISS_REPORT
+            SET
+                REPORT_TRAN_TYPE = LEFT(visa_col_20, 2),
+                buiseness_tran_type = SUBSTRING(visa_col_20, 4, 3),
+                BUSINESS_TRXN_CYC = SUBSTRING(visa_col_20, 7, 1),
+                REVERSAL_INDICATOR = SUBSTRING(visa_col_20, 8, 2)
+            WHERE REPORT_ID = '140'
+              AND TERMINAL = '1000130034'
+              AND ROLLING = '1000130034'
+              AND FUND_TRANSFER_ENTITY = '1000130034'
+              AND businessdate = @v_businessdate
+              AND fileProcessid = @p_fileprocessid;
+
+        END; -- IF NOT EXISTS
+
+    END TRY
+
+    BEGIN CATCH
+
+        ------------------------------------------------------------
+        -- Step 9: Capture error information
+        ------------------------------------------------------------
+        SELECT
+            @v_error_message = ERROR_MESSAGE(),
+            @v_error_number = ERROR_NUMBER(),
+            @v_error_line = ERROR_LINE(),
+            @v_error_procedure = ERROR_PROCEDURE();
+
+        SET @err_context =
+            CONCAT(
+                'Procedure: ',
+                COALESCE(
+                    @v_error_procedure,
+                    'usp_visa46_insert'
+                ),
+                '; Line: ',
+                @v_error_line,
+                '; Error Number: ',
+                @v_error_number
+            );
+
+
+        ------------------------------------------------------------
+        -- Step 10: Log the error
+        ------------------------------------------------------------
+        BEGIN TRY
+
+            EXEC dbo.usp_errorLog_insert
+                @p_message =
+                    CONCAT(
+                        'p_fileProcessid: ',
+                        @p_fileprocessid,
+                        '| function : usp_visa46_insert'
+                    ),
+                @p_error_code = @v_error_number,
+                @p_error_message = @v_error_message,
+                @p_error_context = @err_context,
+                @p_error_narration = 'function_error_Narration';
+
+        END TRY
+
+        BEGIN CATCH
+            -- Preserve the original error if error logging fails.
+        END CATCH;
+
+    END CATCH;
+
+END;
+GO
